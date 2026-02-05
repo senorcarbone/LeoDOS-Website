@@ -9,6 +9,7 @@ import Publications from "./pages/Publications";
 import Visualizer from "./pages/Visualizer";
 import Demo from "./pages/Demo";
 import OpenSource from "./pages/OpenSource";
+import Press from "./pages/Press";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/visualizer" element={<Visualizer />} />
           <Route path="/demo" element={<Demo />} />
           <Route path="/opensource" element={<OpenSource />} />
+          <Route path="/press" element={<Press />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
