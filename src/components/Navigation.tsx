@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Satellite } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
@@ -27,33 +27,31 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass py-3'
+          ? 'bg-background/90 backdrop-blur-md border-b border-border/30 py-4'
           : 'py-6 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <Satellite className="w-8 h-8 text-primary transition-all duration-300 group-hover:text-energy-amber" />
-              <div className="absolute inset-0 bg-primary/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <span className="font-orbitron text-2xl font-bold gradient-text-orbital">
-              LeoDOS
+          <Link to="/" className="flex items-center gap-2">
+            <span className="font-orbitron text-xl font-semibold text-foreground">
+              <span className="text-primary">Leo</span>DOS
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`nav-link font-medium text-sm tracking-wide ${
-                  isActive(link.path) ? 'active' : ''
+                className={`text-sm transition-colors duration-200 ${
+                  isActive(link.path) 
+                    ? 'text-foreground' 
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 {link.name}
@@ -67,34 +65,34 @@ const Navigation = () => {
               href="https://arxiv.org/abs/2601.17589"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-cosmic rounded-lg text-sm font-orbitron"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Latest Paper
+              Read Paper →
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-muted-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-border/50 animate-fade-in-up">
-            <div className="container mx-auto px-6 py-4 flex flex-col gap-2">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/30">
+            <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`py-3 px-4 rounded-lg transition-all duration-300 font-medium ${
+                  className={`py-2 text-sm transition-colors ${
                     isActive(link.path)
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground'
+                      ? 'text-foreground'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {link.name}
@@ -104,9 +102,9 @@ const Navigation = () => {
                 href="https://arxiv.org/abs/2601.17589"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-cosmic-solid rounded-lg text-sm font-orbitron text-center mt-2"
+                className="py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Latest Paper
+                Read Paper →
               </a>
             </div>
           </div>

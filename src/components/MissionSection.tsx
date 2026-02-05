@@ -47,41 +47,38 @@ const features = [
 
 const MissionSection = () => {
   return (
-    <section id="mission" className="section-cosmic">
+    <section id="mission" className="py-24">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 rounded-full text-xs font-mono text-primary border border-primary/30 mb-4">
-            MISSION OVERVIEW
+        <div className="max-w-2xl mb-16">
+          <span className="text-xs tracking-[0.2em] text-muted-foreground/70 uppercase">
+            Mission Overview
           </span>
-          <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">The Future of </span>
-            <span className="gradient-text-orbital">Space Computing</span>
+          <h2 className="font-orbitron text-3xl md:text-4xl font-bold mt-4 mb-6 text-foreground">
+            The Future of Space Computing
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed">
             Mobile broadband communication and earth observation use cases have pushed the boundaries 
             of space-based computing. We're developing the operating system for tomorrow's orbital infrastructure.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature) => (
             <div
               key={feature.title}
-              className="card-cosmic rounded-2xl p-6 group"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group p-6 rounded-lg border border-border/30 bg-card/30 hover:border-border/50 transition-colors duration-300"
             >
               {/* Icon */}
-              <div className="relative mb-6">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <feature.icon className="w-7 h-7 text-primary" />
+              <div className="mb-5">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <feature.icon className="w-5 h-5 text-primary" />
                 </div>
-                <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               {/* Content */}
-              <h3 className="font-orbitron text-xl font-semibold text-foreground mb-3">
+              <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
@@ -89,11 +86,11 @@ const MissionSection = () => {
               </p>
 
               {/* Stat */}
-              <div className="flex items-baseline gap-2 pt-4 border-t border-border/50">
-                <span className="font-orbitron text-2xl font-bold gradient-text-energy">
+              <div className="flex items-baseline gap-2 pt-4 border-t border-border/30">
+                <span className="font-orbitron text-xl font-semibold text-primary">
                   {feature.stat}
                 </span>
-                <span className="text-xs text-muted-foreground font-mono uppercase tracking-wider">
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">
                   {feature.statLabel}
                 </span>
               </div>
@@ -102,25 +99,24 @@ const MissionSection = () => {
         </div>
 
         {/* Partners */}
-        <div className="mt-20 text-center">
-          <p className="text-sm text-muted-foreground mb-6 font-mono">FUNDED & SUPPORTED BY</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        <div className="mt-20 pt-12 border-t border-border/30">
+          <p className="text-xs tracking-wider text-muted-foreground/60 uppercase mb-6">Funded & Supported By</p>
+          <div className="flex flex-wrap items-center gap-8 md:gap-12">
             <a
               href="https://www.rymdstyrelsen.se/en/"
               target="_blank"
               rel="noopener noreferrer"
-              className="opacity-60 hover:opacity-100 transition-opacity duration-300"
+              className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <span className="font-orbitron text-lg text-foreground">Swedish National Space Agency</span>
+              <span className="text-sm">Swedish National Space Agency</span>
             </a>
-            <div className="w-px h-6 bg-border hidden md:block" />
             <a
               href="https://ri.se/en"
               target="_blank"
               rel="noopener noreferrer"
-              className="opacity-60 hover:opacity-100 transition-opacity duration-300"
+              className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <span className="font-orbitron text-lg text-foreground">RISE</span>
+              <span className="text-sm">RISE Research Institutes of Sweden</span>
             </a>
           </div>
         </div>

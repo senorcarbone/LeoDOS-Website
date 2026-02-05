@@ -5,14 +5,11 @@ interface Star {
   y: number;
   size: number;
   opacity: number;
-  twinkleSpeed: number;
-  twinkleOffset: number;
 }
 
 const StarField = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const starsRef = useRef<Star[]>([]);
-  const animationRef = useRef<number>();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -25,63 +22,39 @@ const StarField = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       initStars();
+      drawStars();
     };
 
     const initStars = () => {
-      const starCount = Math.floor((canvas.width * canvas.height) / 8000);
+      const starCount = Math.floor((canvas.width * canvas.height) / 15000);
       starsRef.current = [];
       
       for (let i = 0; i < starCount; i++) {
         starsRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.5,
-          opacity: Math.random() * 0.5 + 0.3,
-          twinkleSpeed: Math.random() * 0.02 + 0.01,
-          twinkleOffset: Math.random() * Math.PI * 2,
+          size: Math.random() * 1.5 + 0.3,
+          opacity: Math.random() * 0.3 + 0.1,
         });
       }
     };
 
-    const animate = (time: number) => {
+    const drawStars = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       starsRef.current.forEach((star) => {
-        const twinkle = Math.sin(time * star.twinkleSpeed + star.twinkleOffset) * 0.3 + 0.7;
-        const currentOpacity = star.opacity * twinkle;
-        
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(200, 220, 255, ${currentOpacity})`;
+        ctx.fillStyle = `rgba(180, 200, 220, ${star.opacity})`;
         ctx.fill();
-        
-        // Add glow effect for larger stars
-        if (star.size > 1.2) {
-          const gradient = ctx.createRadialGradient(
-            star.x, star.y, 0,
-            star.x, star.y, star.size * 3
-          );
-          gradient.addColorStop(0, `rgba(100, 200, 255, ${currentOpacity * 0.3})`);
-          gradient.addColorStop(1, 'rgba(100, 200, 255, 0)');
-          ctx.beginPath();
-          ctx.arc(star.x, star.y, star.size * 3, 0, Math.PI * 2);
-          ctx.fillStyle = gradient;
-          ctx.fill();
-        }
       });
-      
-      animationRef.current = requestAnimationFrame(animate);
     };
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
-    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
     };
   }, []);
 
