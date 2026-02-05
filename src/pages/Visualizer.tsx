@@ -1,18 +1,33 @@
-import { Satellite, ArrowLeft, Play, Info } from 'lucide-react';
+import { ArrowLeft, Maximize2, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import StarField from '@/components/StarField';
 
 const Visualizer = () => {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const vizUrl = 'https://leodos-project.github.io/leo-viz/';
+
+  const toggleFullscreen = () => {
+    const iframe = document.getElementById('leo-viz-iframe');
+    if (iframe) {
+      if (!document.fullscreenElement) {
+        iframe.requestFullscreen();
+        setIsFullscreen(true);
+      } else {
+        document.exitFullscreen();
+        setIsFullscreen(false);
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen relative">
       <StarField />
       <Navigation />
 
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-[600px] h-[400px] bg-energy-amber/5 rounded-full blur-[120px]" />
-        
         <div className="container mx-auto px-6 relative z-10">
           <Link
             to="/"
@@ -22,69 +37,70 @@ const Visualizer = () => {
             <span className="text-sm font-mono">Back to Home</span>
           </Link>
 
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 rounded-full text-xs font-mono text-energy-amber border border-energy-amber/30 mb-4">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1 rounded-full text-xs font-mono text-primary border border-primary/30 mb-4">
               INTERACTIVE
             </span>
             <h1 className="font-orbitron text-4xl md:text-6xl font-bold mb-6">
               <span className="text-foreground">Constellation </span>
-              <span className="gradient-text-energy">Visualizer</span>
+              <span className="text-primary">Visualizer</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Explore LEO satellite constellations in real-time 3D visualization.
             </p>
           </div>
 
-          {/* Placeholder for visualizer */}
-          <div className="max-w-5xl mx-auto">
-            <div className="card-cosmic rounded-3xl overflow-hidden aspect-video flex items-center justify-center relative">
-              {/* Animated orbital visualization placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-64 h-64">
-                  <div className="absolute inset-0 border-2 border-primary/30 rounded-full animate-orbit-slow" />
-                  <div className="absolute inset-8 border border-orbital-cyan/40 rounded-full animate-orbit-reverse" />
-                  <div className="absolute inset-16 border border-energy-amber/30 rounded-full animate-orbit" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 shadow-glow-cyan" />
-                  </div>
-                  {/* Satellites */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <Satellite className="w-6 h-6 text-primary animate-pulse" />
-                  </div>
-                  <div className="absolute bottom-8 right-0 translate-x-1/2">
-                    <Satellite className="w-5 h-5 text-energy-amber animate-pulse" style={{ animationDelay: '0.5s' }} />
-                  </div>
+          {/* Visualizer iframe */}
+          <div className="max-w-6xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-background/50 backdrop-blur">
+              {/* Toolbar */}
+              <div className="flex items-center justify-between px-4 py-3 border-b border-border/50 bg-muted/30">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                </div>
+                <span className="text-xs font-mono text-muted-foreground">LEO Viz</span>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={toggleFullscreen}
+                    className="p-2 hover:bg-muted/50 rounded-lg transition-colors"
+                    title="Toggle fullscreen"
+                  >
+                    <Maximize2 className="w-4 h-4 text-muted-foreground" />
+                  </button>
+                  <a
+                    href={vizUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 hover:bg-muted/50 rounded-lg transition-colors"
+                    title="Open in new tab"
+                  >
+                    <ExternalLink className="w-4 h-4 text-muted-foreground" />
+                  </a>
                 </div>
               </div>
 
-              {/* Coming soon overlay */}
-              <div className="relative z-10 text-center p-8 glass rounded-2xl">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Play className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-orbitron text-xl font-semibold mb-2">Interactive Demo Coming Soon</h3>
-                <p className="text-muted-foreground text-sm max-w-md">
-                  We're building an immersive 3D visualization of LEO satellite networks 
-                  with real-time data processing simulation.
-                </p>
-              </div>
+              {/* Iframe */}
+              <iframe
+                id="leo-viz-iframe"
+                src={vizUrl}
+                className="w-full aspect-video min-h-[600px]"
+                title="LEO Constellation Visualizer"
+                allow="fullscreen"
+              />
             </div>
 
-            {/* Info Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {/* Instructions */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { title: 'Real-Time Tracking', desc: 'Live satellite positions from TLE data' },
-                { title: 'Network Topology', desc: 'Inter-satellite link visualization' },
-                { title: 'Data Flow', desc: 'Processing pipeline simulation' },
+                { title: 'Navigate', desc: 'Drag to rotate the globe, scroll to zoom in/out' },
+                { title: 'Configure', desc: 'Use the left panel to adjust simulation settings' },
+                { title: 'Explore', desc: 'Toggle layers to view orbits, links, and coverage' },
               ].map((item) => (
-                <div key={item.title} className="card-cosmic rounded-xl p-6">
-                  <div className="flex items-start gap-3">
-                    <Info className="w-5 h-5 text-primary mt-0.5" />
-                    <div>
-                      <h4 className="font-orbitron text-sm font-semibold mb-1">{item.title}</h4>
-                      <p className="text-xs text-muted-foreground">{item.desc}</p>
-                    </div>
-                  </div>
+                <div key={item.title} className="p-6 rounded-xl border border-border/50 bg-muted/10">
+                  <h4 className="font-orbitron text-sm font-semibold mb-2 text-foreground">{item.title}</h4>
+                  <p className="text-xs text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
             </div>
