@@ -1,47 +1,52 @@
-import { ExternalLink, FileText, Calendar, Users, ArrowLeft, Presentation } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import StarField from '@/components/StarField';
+import { ExternalLink, FileText, Calendar, Users, ArrowLeft, Presentation } from "lucide-react";
+import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import StarField from "@/components/StarField";
 
 const publications = [
   {
-    title: 'Lightspeed Data Compute for the Space Era',
-    authors: ['Paris Carbone', 'Bernardo Huberman', 'Thomas Sandholm'],
-    venue: 'arXiv Preprint',
-    year: '2025',
-    abstract: 'We present a vision for distributed computing in Low Earth Orbit mega-constellations, addressing the fundamental challenges of moving computation to space-based systems while maintaining consistency and fault tolerance.',
-    link: 'https://arxiv.org/abs/2601.17589',
-    type: 'Preprint',
+    title: "Lightspeed Data Compute for the Space Era",
+    authors: ["Paris Carbone", "Bernardo Huberman", "Thomas Sandholm"],
+    venue: "arXiv Preprint",
+    year: "2026",
+    abstract:
+      "We present a vision for distributed computing in Low Earth Orbit mega-constellations, addressing the fundamental challenges of moving computation to space-based systems while maintaining consistency and fault tolerance.",
+    link: "https://arxiv.org/abs/2601.17589",
+    type: "Preprint",
   },
   {
-    title: 'SkyMemory: A LEO Edge Cache for Transformer Inference Optimization and Scale Out',
-    authors: ['LeoDOS Team'],
-    venue: 'arXiv Preprint',
-    year: '2025',
-    abstract: 'SkyMemory introduces a novel edge caching architecture for LEO satellites that optimizes transformer-based inference workloads, enabling efficient scale-out of AI models in orbital computing environments.',
-    link: 'https://arxiv.org/abs/2505.14427',
-    slidesLink: 'https://www.slideshare.net/slideshow/skymemory-a-leo-edge-cache-for-transformer-inference-optimization-and-scale-out/285119984',
-    type: 'Preprint',
+    title: "SkyMemory: A LEO Edge Cache for Transformer Inference Optimization and Scale Out",
+    authors: ["LeoDOS Team"],
+    venue: "arXiv Preprint",
+    year: "2025",
+    abstract:
+      "SkyMemory introduces a novel edge caching architecture for LEO satellites that optimizes transformer-based inference workloads, enabling efficient scale-out of AI models in orbital computing environments.",
+    link: "https://arxiv.org/abs/2505.14427",
+    slidesLink:
+      "https://www.slideshare.net/slideshow/skymemory-a-leo-edge-cache-for-transformer-inference-optimization-and-scale-out/285119984",
+    type: "Preprint",
   },
   {
-    title: 'LeoDist: A Distributed Ledger On-board LEO Satellites',
-    authors: ['LeoDOS Team'],
-    venue: 'IEEE SMC-IT/SCC 2025',
-    year: '2025',
-    abstract: 'LeoDist presents a distributed ledger system designed specifically for on-board LEO satellite environments, addressing the unique challenges of consensus and data integrity in space-based networks.',
-    link: 'https://2025.smcit-scc.space/details/smc-it-scc-2025-papers/16/SCC-61-LeoDist-A-Distributed-Ledger-On-board-LEO-Satellites',
-    slidesLink: 'https://easychair.org/smart-slide/slide/kfLL',
-    type: 'Conference',
+    title: "LeoDist: A Distributed Ledger On-board LEO Satellites",
+    authors: ["LeoDOS Team"],
+    venue: "IEEE SMC-IT/SCC 2025",
+    year: "2025",
+    abstract:
+      "LeoDist presents a distributed ledger system designed specifically for on-board LEO satellite environments, addressing the unique challenges of consensus and data integrity in space-based networks.",
+    link: "https://2025.smcit-scc.space/details/smc-it-scc-2025-papers/16/SCC-61-LeoDist-A-Distributed-Ledger-On-board-LEO-Satellites",
+    slidesLink: "https://easychair.org/smart-slide/slide/kfLL",
+    type: "Conference",
   },
   {
-    title: 'A Cloud in the Sky: Geo-Aware On-board Data Services for LEO Satellites',
-    authors: ['LeoDOS Team'],
-    venue: 'arXiv Preprint',
-    year: '2024',
-    abstract: 'This paper explores geo-aware data services for LEO satellite constellations, presenting architectures that leverage orbital mechanics to provide location-aware computing and storage capabilities.',
-    link: 'https://arxiv.org/abs/2410.07586',
-    type: 'Preprint',
+    title: "A Cloud in the Sky: Geo-Aware On-board Data Services for LEO Satellites",
+    authors: ["LeoDOS Team"],
+    venue: "arXiv Preprint",
+    year: "2024",
+    abstract:
+      "This paper explores geo-aware data services for LEO satellite constellations, presenting architectures that leverage orbital mechanics to provide location-aware computing and storage capabilities.",
+    link: "https://arxiv.org/abs/2410.07586",
+    type: "Preprint",
   },
 ];
 
@@ -53,7 +58,7 @@ const Publications = () => {
 
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-nebula/5 rounded-full blur-[120px]" />
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <Link
             to="/"
@@ -88,18 +93,14 @@ const Publications = () => {
                   </span>
                 </div>
 
-                <h2 className="font-orbitron text-xl lg:text-2xl font-bold text-foreground mb-3">
-                  {pub.title}
-                </h2>
+                <h2 className="font-orbitron text-xl lg:text-2xl font-bold text-foreground mb-3">{pub.title}</h2>
 
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                   <Users className="w-4 h-4" />
-                  <span>{pub.authors.join(', ')}</span>
+                  <span>{pub.authors.join(", ")}</span>
                 </div>
 
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  {pub.abstract}
-                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">{pub.abstract}</p>
 
                 <div className="flex items-center gap-4 flex-wrap">
                   <a
