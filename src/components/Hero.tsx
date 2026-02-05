@@ -1,5 +1,5 @@
 import { ArrowDown, ExternalLink } from 'lucide-react';
-import heroImage from '@/assets/hero-earth-constellation.jpg';
+import heroImage from '@/assets/hero-earth.jpg';
 
 const Hero = () => {
   return (
