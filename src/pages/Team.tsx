@@ -1,13 +1,13 @@
-import { ExternalLink, Linkedin, Globe, GraduationCap, ArrowLeft, Github } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import StarField from '@/components/StarField';
+import { ExternalLink, Linkedin, Globe, GraduationCap, ArrowLeft, Github } from "lucide-react";
+import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import StarField from "@/components/StarField";
 
-import parisImage from '@/assets/team/paris-carbone.jpg';
-import thomasImage from '@/assets/team/thomas-sandholm.jpg';
-import bernardoImage from '@/assets/team/bernardo-huberman.jpg';
-import klasImage from '@/assets/team/klas-segeljakt.png';
+import parisImage from "@/assets/team/paris-carbone.jpg";
+import thomasImage from "@/assets/team/thomas-sandholm.jpg";
+import bernardoImage from "@/assets/team/bernardo-huberman.jpg";
+import klasImage from "@/assets/team/klas-segeljakt.png";
 
 interface TeamMember {
   name: string;
@@ -28,57 +28,56 @@ interface TeamMember {
 
 const team: TeamMember[] = [
   {
-    name: 'Klas Segeljakt',
-    role: 'Researcher',
-    title: 'PhD Candidate',
-    organization: 'KTH Royal Institute of Technology',
+    name: "Klas Segeljakt",
+    role: "Researcher",
+    title: "PhD Candidate",
+    organization: "KTH Royal Institute of Technology",
     image: klasImage,
-    bio: 'Klas is a PhD student at KTH focusing on the intersection of Programming Languages and Distributed Systems. He has contributed to Arc and Arcon, novel systems for batch and stream programming, and develops arc-script, a programming language for distributed data parallel stream processing.',
-    expertise: ['Stream Processing', 'Programming Languages', 'Rust', 'Distributed Systems'],
+    bio: "Klas is a PhD student at KTH focusing on the intersection of Programming Languages and Distributed Systems. He has contributed to Arc and Arcon, novel systems for batch and stream programming, and develops arc-script, a programming language for distributed data parallel stream processing.",
+    expertise: ["Stream Processing", "Programming Languages", "Rust", "Distributed Systems"],
     links: {
-      linkedin: 'https://www.linkedin.com/in/klas-segeljakt/',
-      scholar: 'https://scholar.google.com/citations?user=k4bVwsIAAAAJ',
-      github: 'https://github.com/segeljakt',
+      linkedin: "https://www.linkedin.com/in/klas-segeljakt/",
+      scholar: "https://scholar.google.com/citations?user=k4bVwsIAAAAJ",
+      github: "https://github.com/segeljakt",
     },
   },
   {
-    name: 'Thomas Sandholm',
-    role: 'Technical Advisor',
-    title: 'Research Scientist',
-    organization: 'KTH / RISE',
-    image: thomasImage,
-    bio: 'Thomas holds a PhD in Computer and Systems Sciences from KTH. He has over 15 years of research experience in distributed systems, computational markets, and social computing. His work focuses on the intersection of machine learning and distributed resource allocation.',
-    expertise: ['Machine Learning', 'Computational Markets', 'Distributed Systems', 'Resource Allocation'],
-    links: {
-      linkedin: 'https://www.linkedin.com/in/thomassandholm/',
-    },
-  },
-  {
-    name: 'Bernardo Huberman',
-    role: 'Distinguished Advisor',
-    title: 'Distinguished Visiting Scientist',
-    organization: 'RISE Research Institutes of Sweden',
+    name: "Bernardo Huberman",
+    role: "Distinguished Advisor",
+    title: "Distinguished Visiting Scientist",
+    organization: "RISE Research Institutes of Sweden",
     image: bernardoImage,
-    bio: 'Bernardo is an HP Fellow and former Director of the Systems Research Center at Hewlett Packard Laboratories. He received his PhD in Physics from the University of Pennsylvania and is a Consulting Professor at Stanford University. A pioneer in complex systems and social computation.',
-    expertise: ['Complex Systems', 'Social Computation', 'Information Dynamics', 'Systems Theory'],
+    bio: "Bernardo is an HP Fellow and former Director of the Systems Research Center at Hewlett Packard Laboratories. He received his PhD in Physics from the University of Pennsylvania and is a Consulting Professor at Stanford University. A pioneer in complex systems and social computation.",
+    expertise: ["Complex Systems", "Social Computation", "Information Dynamics", "Systems Theory"],
     links: {
-      linkedin: 'https://www.linkedin.com/in/bernardo-huberman-39b40823/',
-      scholar: 'https://scholar.google.com/citations?user=b_GVwg0AAAAJ',
+      linkedin: "https://www.linkedin.com/in/bernardo-huberman-39b40823/",
+      scholar: "https://scholar.google.com/citations?user=b_GVwg0AAAAJ",
     },
   },
   {
-    name: 'Paris Carbone',
-    role: 'Principal Investigator',
-    title: 'Associate Professor of Data Systems',
-    organization: 'KTH Royal Institute of Technology & RISE',
-    image: parisImage,
-    bio: 'Paris leads the Data Systems Lab at KTH and RISE. He holds a PhD in Distributed Computer Systems from KTH and has been a core open source committer for Apache Flink. His research spans distributed algorithms, databases, and data management to declarative programming support for data analytics and AI.',
-    expertise: ['Distributed Systems', 'Stream Processing', 'Apache Flink', 'Space Computing'],
+    name: "Thomas Sandholm",
+    role: "Principal Co-Investigator",
+    title: "Research Scientist",
+    organization: "RISE",
+    image: thomasImage,
+    bio: "Thomas holds a PhD in Computer and Systems Sciences from KTH. He has over 15 years of research experience in distributed systems, computational markets, and social computing. His work focuses on the intersection of machine learning and distributed resource allocation.",
+    expertise: ["Machine Learning", "Computational Markets", "Distributed Systems", "Resource Allocation"],
     links: {
-      website: 'https://datasystems.nu',
-      linkedin: 'https://www.linkedin.com/in/paris-carbone-20752726/',
-      scholar: 'https://scholar.google.com/citations?user=qSJPU-UAAAAJ',
-      rise: 'https://www.ri.se/en/person/paris-carbone',
+      linkedin: "https://www.linkedin.com/in/thomassandholm/",
+    },
+  },
+  {
+    name: "Paris Carbone",
+    role: "Principal Co-Investigator",
+    title: "Associate Professor of Data Systems",
+    organization: "KTH Royal Institute of Technology & RISE",
+    image: parisImage,
+    bio: "Paris leads the Data Systems Lab at KTH and RISE. He holds a PhD in Distributed Computer Systems from KTH and has been a core open source committer for Apache Flink. His research spans distributed algorithms, databases, and data management to declarative programming support for data analytics and AI.",
+    expertise: ["Distributed Systems", "Stream Processing", "Apache Flink", "Space Computing"],
+    links: {
+      website: "https://datasystems.nu",
+      linkedin: "https://www.linkedin.com/in/paris-carbone-20752726/",
+      scholar: "https://scholar.google.com/citations?user=qSJPU-UAAAAJ",
     },
   },
 ];
@@ -98,7 +97,10 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => (
           ) : (
             <div className="w-full h-full flex items-center justify-center">
               <span className="text-4xl font-orbitron text-muted-foreground/30">
-                {member.name.split(' ').map(n => n[0]).join('')}
+                {member.name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
               </span>
             </div>
           )}
@@ -108,20 +110,14 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => (
       {/* Content */}
       <div className="flex-1">
         <div className="mb-4">
-          <span className="text-xs tracking-wider text-primary/80 uppercase font-medium">
-            {member.role}
-          </span>
-          <h2 className="font-orbitron text-2xl font-semibold text-foreground mt-1">
-            {member.name}
-          </h2>
+          <span className="text-xs tracking-wider text-primary/80 uppercase font-medium">{member.role}</span>
+          <h2 className="font-orbitron text-2xl font-semibold text-foreground mt-1">{member.name}</h2>
           <p className="text-sm text-muted-foreground mt-1">
             {member.title} · {member.organization}
           </p>
         </div>
 
-        <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
-          {member.bio}
-        </p>
+        <p className="text-muted-foreground leading-relaxed mb-6 text-sm">{member.bio}</p>
 
         {/* Expertise */}
         <div className="flex flex-wrap gap-2 mb-6">
@@ -216,15 +212,12 @@ const TeamPage = () => {
           </Link>
 
           <div className="max-w-2xl">
-            <span className="text-xs tracking-[0.2em] text-muted-foreground/70 uppercase">
-              Research Team
-            </span>
+            <span className="text-xs tracking-[0.2em] text-muted-foreground/70 uppercase">Research Team</span>
             <h1 className="font-orbitron text-4xl md:text-5xl font-bold mt-4 mb-6 text-foreground">
               The People Behind LeoDOS
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              A team of researchers pushing the boundaries of distributed computing 
-              beyond Earth's atmosphere.
+              A team of researchers pushing the boundaries of distributed computing beyond Earth's atmosphere.
             </p>
           </div>
         </div>
