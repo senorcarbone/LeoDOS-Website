@@ -82,7 +82,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground/70">© 2025 LeoDOS Project</p>
+          <p className="text-xs text-muted-foreground/70">© 2026 LeoDOS Project</p>
           <p className="text-xs text-muted-foreground/70">RISE Research Institutes of Sweden</p>
         </div>
       </div>
