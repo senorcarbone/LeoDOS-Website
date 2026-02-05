@@ -34,7 +34,7 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-foreground/80 mb-4 font-light leading-relaxed">
             A Distributed Operating System
           </p>
-          <p className="text-xl md:text-2xl text-foreground/60 mb-16 font-light">
+          <p className="text-xl md:text-2xl text-primary mb-16 font-light drop-shadow-[0_0_20px_hsl(var(--primary)/0.5)]">
             for LEO Mega-Constellations
           </p>
 
