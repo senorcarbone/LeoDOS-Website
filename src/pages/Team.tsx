@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import StarField from "@/components/StarField";
 
 import parisImage from "@/assets/team/paris-carbone.jpg";
-import thomasImage from "@/assets/team/thomas-sandholm.jpg";
-import bernardoImage from "@/assets/team/bernardo-huberman.jpg";
+import thomasImage from "@/assets/team/thomas.jpg";
+import bernardoImage from "@/assets/team/bernardo.jpg";
 import klasImage from "@/assets/team/klas-segeljakt.png";
 
 interface TeamMember {
