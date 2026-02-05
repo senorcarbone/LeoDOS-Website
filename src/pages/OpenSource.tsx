@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Code2, GitBranch, Star, ArrowLeft } from 'lucide-react';
+import { Github, Code2, GitBranch, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -6,28 +6,18 @@ import StarField from '@/components/StarField';
 
 const projects = [
   {
-    name: 'LeoDOS Core',
-    description: 'The distributed operating system kernel for LEO satellite constellations. Handles task scheduling, state management, and inter-satellite communication.',
-    language: 'Rust',
-    stars: 'Coming Soon',
-    status: 'In Development',
-    topics: ['distributed-systems', 'space-computing', 'real-time'],
-  },
-  {
-    name: 'Orbital Stream',
-    description: 'Stream processing framework optimized for constrained satellite environments. Built on Apache Flink principles.',
-    language: 'Scala',
-    stars: 'Coming Soon',
-    status: 'In Development',
-    topics: ['stream-processing', 'edge-computing', 'flink'],
-  },
-  {
-    name: 'LEO Simulator',
-    description: 'Simulation environment for testing distributed algorithms in orbital network topologies with realistic constraints.',
+    name: 'leopymr',
+    description: 'SpaceCoMP implementation in Python. A framework for distributed computing across satellite constellations.',
     language: 'Python',
-    stars: 'Coming Soon',
-    status: 'Planning',
-    topics: ['simulation', 'testing', 'research'],
+    url: 'https://github.com/LeoDOS-Project/leopymr',
+    topics: ['python', 'distributed-systems', 'spacecomp'],
+  },
+  {
+    name: 'leo-viz',
+    description: 'Walker Delta/Star satellite constellation visualization built in Rust with egui.',
+    language: 'Rust',
+    url: 'https://github.com/LeoDOS-Project/leo-viz',
+    topics: ['rust', 'visualization', 'egui'],
   },
 ];
 
@@ -62,16 +52,13 @@ const OpenSource = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {projects.map((project) => (
               <article key={project.name} className="card-cosmic rounded-2xl p-6 flex flex-col h-full">
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <Code2 className="w-6 h-6 text-primary" />
                   </div>
-                  <span className="px-2 py-1 rounded text-xs font-mono bg-muted/50 text-muted-foreground">
-                    {project.status}
-                  </span>
                 </div>
 
                 <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">
@@ -99,18 +86,16 @@ const OpenSource = () => {
                       <div className="w-3 h-3 rounded-full bg-energy-amber" />
                       {project.language}
                     </span>
-                    <span className="flex items-center gap-1">
-                      <Star className="w-3 h-3" />
-                      {project.stars}
-                    </span>
                   </div>
-                  <button
-                    disabled
-                    className="flex items-center gap-1 text-xs text-muted-foreground/50 cursor-not-allowed"
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
                   >
                     <Github className="w-4 h-4" />
-                    <span>View</span>
-                  </button>
+                    <span>View on GitHub</span>
+                  </a>
                 </div>
               </article>
             ))}
@@ -122,17 +107,17 @@ const OpenSource = () => {
               <GitBranch className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-orbitron text-xl font-semibold mb-4">Want to Contribute?</h3>
               <p className="text-muted-foreground text-sm mb-6">
-                Our repositories will be public soon. Stay tuned for opportunities to contribute 
-                to the future of space-based distributed computing.
+                Join us in building the future of space-based distributed computing. 
+                Check out our repositories and get involved.
               </p>
               <a
-                href="https://github.com"
+                href="https://github.com/LeoDOS-Project"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-cosmic rounded-lg font-orbitron text-sm inline-flex items-center gap-2"
               >
                 <Github className="w-4 h-4" />
-                <span>Follow on GitHub</span>
+                <span>Visit LeoDOS on GitHub</span>
               </a>
             </div>
           </div>
