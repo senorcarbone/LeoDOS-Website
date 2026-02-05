@@ -21,17 +21,15 @@ const Hero = () => {
           </div>
 
           {/* Title - Clean, typographic */}
-          <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
-            <span className="text-primary">Leo</span>
+          <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 drop-shadow-[0_0_30px_rgba(56,189,248,0.8)] animate-pulse">Leo</span>
             <span className="text-foreground">DOS</span>
           </h1>
 
           {/* Subtitle - Editorial style */}
-          <p className="text-xl md:text-2xl text-foreground/90 mb-4 font-medium leading-relaxed">
-            A Distributed Operating System
-          </p>
-          <p className="text-xl md:text-2xl text-primary mb-16 font-semibold drop-shadow-[0_0_20px_hsl(var(--primary)/0.5)]">
-            for the Space Era
+          <p className="text-xl md:text-2xl mb-16 font-medium leading-relaxed">
+            <span className="text-foreground/90">A Distributed Operating System </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-sky-500 font-semibold drop-shadow-[0_0_25px_rgba(56,189,248,0.7)]">for the Space Era</span>
           </p>
 
           {/* Description - Refined */}
