@@ -22,7 +22,7 @@ const Hero = () => {
 
           {/* Title - Clean, typographic */}
           <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 drop-shadow-[0_0_30px_rgba(56,189,248,0.8)] animate-pulse">Leo</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-400 to-sky-400 drop-shadow-[0_0_25px_rgba(56,189,248,0.6)]">Leo</span>
             <span className="text-foreground">DOS</span>
           </h1>
 
