@@ -158,15 +158,15 @@
   /* Neon pulse for Leo logo */
   @keyframes neonPulse {
     0%, 100% {
-      filter: drop-shadow(0 0 20px rgba(56,189,248,0.7)) drop-shadow(0 0 40px rgba(56,189,248,0.4));
+      filter: drop-shadow(0 0 15px rgba(56,189,248,0.5)) drop-shadow(0 0 30px rgba(56,189,248,0.3));
     }
     50% {
-      filter: drop-shadow(0 0 30px rgba(56,189,248,0.9)) drop-shadow(0 0 60px rgba(56,189,248,0.6));
+      filter: drop-shadow(0 0 22px rgba(56,189,248,0.65)) drop-shadow(0 0 45px rgba(56,189,248,0.4));
     }
   }
 
   .animate-neon-pulse {
-    animation: neonPulse 2s ease-in-out infinite;
+    animation: neonPulse 3s ease-in-out infinite;
   }
 
   /* Simple fade in animation */
