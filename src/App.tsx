@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Team from "./pages/Team";
 import Publications from "./pages/Publications";
 import Visualizer from "./pages/Visualizer";
+import Demo from "./pages/Demo";
 import OpenSource from "./pages/OpenSource";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/visualizer" element={<Visualizer />} />
+          <Route path="/demo" element={<Demo />} />
           <Route path="/opensource" element={<OpenSource />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

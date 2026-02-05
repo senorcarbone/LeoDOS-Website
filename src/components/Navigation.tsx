@@ -20,6 +20,7 @@ const Navigation = () => {
     { name: 'Team', path: '/team' },
     { name: 'Publications', path: '/publications' },
     { name: 'Visualizer', path: '/visualizer' },
+    { name: 'Demo', path: '/demo' },
     { name: 'Open Source', path: '/opensource' },
   ];
 
