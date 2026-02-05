@@ -44,7 +44,7 @@ const team: TeamMember[] = [
   {
     name: "Bernardo Huberman",
     role: "Distinguished Advisor",
-    title: "Distinguished Visiting Scientist",
+    title: "Distinguished Scientist",
     organization: "RISE Research Institutes of Sweden",
     image: bernardoImage,
     bio: "Bernardo is an HP Fellow and former Director of the Systems Research Center at Hewlett Packard Laboratories. He received his PhD in Physics from the University of Pennsylvania and is a Consulting Professor at Stanford University. A pioneer in complex systems and social computation.",
@@ -57,7 +57,7 @@ const team: TeamMember[] = [
   {
     name: "Thomas Sandholm",
     role: "Principal Co-Investigator",
-    title: "Research Scientist",
+    title: "Research Scientist, PhD",
     organization: "RISE Research Institutes of Sweden",
     image: thomasImage,
     bio: "Thomas holds a PhD in Computer and Systems Sciences from KTH. He has over 15 years of research experience in distributed systems, computational markets, and social computing. His work focuses on the intersection of machine learning and distributed resource allocation.",
