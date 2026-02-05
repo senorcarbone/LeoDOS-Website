@@ -6,10 +6,11 @@ import StarField from '@/components/StarField';
 
 const conferences = [
   {
-    name: 'IEEE SMC-IT/SCC \'25',
-    description: 'Space Mission Challenges for Information Technology / Space Computing Conference 2025',
-    date: '2025',
-    url: 'https://2025.smcit-scc.space/',
+    name: '2026 NASA cFS Symposium',
+    description: 'Core Flight System Symposium - Presenting LeoDOS project and distributed computing for space systems',
+    date: '2026',
+    url: 'https://etd.gsfc.nasa.gov/capabilities/core-flight-system/events/',
+    slidesUrl: 'https://www.slideshare.net/slideshow/leodos-project-nasa-cfs-symposium-talk-2026/285664275',
   },
   {
     name: 'IEEE CCNC \'26 Workshop',
@@ -18,11 +19,10 @@ const conferences = [
     url: 'https://ccnc2026.ieee-ccnc.org/node/11011',
   },
   {
-    name: '2026 NASA cFS Symposium',
-    description: 'Core Flight System Symposium - Presenting LeoDOS project and distributed computing for space systems',
-    date: '2026',
-    url: 'https://etd.gsfc.nasa.gov/capabilities/core-flight-system/events/',
-    slidesUrl: 'https://www.slideshare.net/slideshow/leodos-project-nasa-cfs-symposium-talk-2026/285664275',
+    name: 'IEEE SMC-IT/SCC \'25',
+    description: 'Space Mission Challenges for Information Technology / Space Computing Conference 2025',
+    date: '2025',
+    url: 'https://2025.smcit-scc.space/',
   },
 ];
 
