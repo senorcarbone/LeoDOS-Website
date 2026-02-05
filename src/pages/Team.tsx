@@ -208,7 +208,7 @@ const TeamPage = () => {
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm">Back to Home</span>
+            <span className="text-sm font-mono">Back to Home</span>
           </Link>
 
           <div className="max-w-2xl">
