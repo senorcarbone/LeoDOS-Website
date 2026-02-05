@@ -9,63 +9,50 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Earth with satellite constellation"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
       </div>
 
-      {/* Animated Orbital Rings */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="relative w-[800px] h-[800px]">
-          {/* Outer Ring */}
-          <div className="absolute inset-0 border border-primary/20 rounded-full animate-orbit-slow" />
-          {/* Middle Ring */}
-          <div className="absolute inset-[80px] border border-orbital-cyan/30 rounded-full animate-orbit-reverse" />
-          {/* Inner Ring */}
-          <div className="absolute inset-[160px] border border-energy-amber/20 rounded-full animate-orbit" />
-          
-          {/* Satellite Dots */}
-          <div className="absolute top-1/2 left-0 w-3 h-3 -translate-y-1/2 -translate-x-1/2">
-            <div className="w-full h-full bg-primary rounded-full animate-pulse shadow-glow-cyan" />
-          </div>
-          <div className="absolute top-0 left-1/2 w-2 h-2 -translate-x-1/2 -translate-y-1/2">
-            <div className="w-full h-full bg-energy-amber rounded-full animate-pulse shadow-glow-amber" />
-          </div>
-        </div>
+      {/* Subtle grid overlay for depth */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="w-full h-full" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: '100px 100px'
+        }} />
       </div>
-
-      {/* Glow Effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] animate-pulse-glow" />
-      <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-nebula/10 rounded-full blur-[80px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary/20 mb-8 animate-fade-in-up">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-background/30 backdrop-blur-sm mb-8 animate-fade-in-up">
+            <span className="w-2 h-2 bg-primary rounded-full" />
             <span className="text-sm font-mono text-muted-foreground">
               Funded by Swedish National Space Agency
             </span>
           </div>
 
           {/* Title */}
-          <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up animation-delay-100">
-            <span className="gradient-text-orbital text-glow-cyan">Leo</span>
+          <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-bold mb-8 animate-fade-in-up animation-delay-100">
+            <span className="text-primary">Leo</span>
             <span className="text-foreground">DOS</span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up animation-delay-200 font-light">
+          {/* Tagline */}
+          <p className="text-2xl md:text-3xl text-foreground/90 mb-4 animate-fade-in-up animation-delay-200 font-light tracking-wide">
             A Distributed Operating System for
           </p>
-          <p className="text-2xl md:text-3xl font-orbitron gradient-text-energy mb-8 animate-fade-in-up animation-delay-300">
+          <p className="text-2xl md:text-3xl font-orbitron text-primary mb-12 animate-fade-in-up animation-delay-300">
             LEO Mega-Constellations
           </p>
 
           {/* Description */}
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-in-up animation-delay-500 leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-16 animate-fade-in-up animation-delay-500 leading-relaxed">
             Pioneering on-board satellite processing to revolutionize space-based computing. 
             Moving computation to the edge of space.
           </p>
@@ -76,14 +63,14 @@ const Hero = () => {
               href="https://arxiv.org/abs/2601.17589"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-cosmic-solid rounded-lg font-orbitron flex items-center gap-2 group"
+              className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-orbitron text-sm flex items-center gap-2 hover:bg-primary/90 transition-colors"
             >
               <span>Read Our Paper</span>
-              <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <ExternalLink className="w-4 h-4" />
             </a>
             <a
               href="#mission"
-              className="btn-cosmic rounded-lg font-orbitron flex items-center gap-2"
+              className="px-8 py-3 border border-border rounded-lg font-orbitron text-sm flex items-center gap-2 hover:bg-muted/30 transition-colors text-muted-foreground hover:text-foreground"
             >
               <span>Explore Mission</span>
               <ArrowDown className="w-4 h-4" />
@@ -94,8 +81,8 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in-up animation-delay-700">
-        <span className="text-xs text-muted-foreground font-mono tracking-widest">SCROLL</span>
-        <div className="w-px h-12 bg-gradient-to-b from-primary/50 to-transparent" />
+        <span className="text-xs text-muted-foreground/60 font-mono tracking-widest">SCROLL</span>
+        <div className="w-px h-12 bg-gradient-to-b from-muted-foreground/30 to-transparent" />
       </div>
     </section>
   );

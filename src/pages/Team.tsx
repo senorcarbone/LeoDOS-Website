@@ -1,4 +1,4 @@
-import { ExternalLink, Linkedin, Globe, GraduationCap, ArrowLeft } from 'lucide-react';
+import { ExternalLink, Linkedin, Globe, GraduationCap, ArrowLeft, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -15,13 +15,25 @@ const team = [
     title: 'Senior Researcher & Head of Distributed Computing',
     organization: 'RISE Research Institutes of Sweden',
     image: parisImage,
-    bio: 'Paris leads the Distributed Computing group at RISE SICS and is an Associate Professor at KTH. He is a core Apache Flink committer and pioneer in distributed stream processing systems. His research focuses on scalable data processing, consistent state management, and now space-based computing.',
-    expertise: ['Distributed Systems', 'Stream Processing', 'Apache Flink', 'Stateful Computing'],
+    bio: 'Paris is the research leader of the Distributed Computing group at RISE SICS. He holds a PhD in Distributed Computer Systems from KTH and has been a core open source committer for Apache Flink, a leading system in data stream processing. His work spans scalable data processing, consistent state management, and space-based distributed systems.',
+    expertise: ['Distributed Systems', 'Stream Processing', 'Apache Flink', 'Space Computing'],
     links: {
       website: 'https://datasystems.nu',
-      linkedin: 'https://www.linkedin.com/in/pariscarbone/',
+      linkedin: 'https://www.linkedin.com/in/paris-carbone-20752726/',
       scholar: 'https://scholar.google.com/citations?user=qSJPU-UAAAAJ',
       rise: 'https://www.ri.se/en/person/paris-carbone',
+    },
+  },
+  {
+    name: 'Thomas Sandholm',
+    role: 'Technical Advisor',
+    title: 'AI & Distributed Systems Researcher',
+    organization: 'KTH / RISE',
+    image: thomasImage,
+    bio: 'Thomas received his PhD from KTH in computational markets and statistical methods. His research focuses on the intersection of machine learning, distributed systems, and resource allocation. He brings deep expertise in market-based approaches to distributed computing and optimization.',
+    expertise: ['Machine Learning', 'Computational Markets', 'Distributed Systems', 'Resource Allocation'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/thomassandholm/',
     },
   },
   {
@@ -33,21 +45,22 @@ const team = [
     bio: 'A technology pioneer and futurist, Bernardo has played a key role as a thought leader in emergent technologies. His early foresights have shaped our digital reality. He brings decades of experience in complex systems, social computation, and distributed architectures to the LeoDOS project.',
     expertise: ['Complex Systems', 'Social Computation', 'Emergent Technologies', 'Systems Theory'],
     links: {
-      linkedin: 'https://www.linkedin.com/in/bernardo-huberman-39b40823',
+      linkedin: 'https://www.linkedin.com/in/bernardo-huberman-39b40823/',
       scholar: 'https://scholar.google.com/citations?user=b_GVwg0AAAAJ',
     },
   },
   {
-    name: 'Thomas Sandholm',
-    role: 'Technical Advisor',
-    title: 'AI & Optimization Expert',
-    organization: 'Strategic Machine / CMU',
-    image: thomasImage,
-    bio: 'A world-renowned expert in AI, game theory, and optimization. His groundbreaking work on strategic reasoning and market design brings unique perspectives to distributed resource allocation in space systems. His expertise helps shape the optimization strategies for orbital computing.',
-    expertise: ['Artificial Intelligence', 'Game Theory', 'Optimization', 'Market Design'],
+    name: 'Klas Segeljakt',
+    role: 'Researcher',
+    title: 'Distributed Systems Researcher',
+    organization: 'RISE Research Institutes of Sweden',
+    image: null, // Placeholder - we'll need to add this image
+    bio: 'Klas is a researcher focusing on distributed stream processing and data-intensive systems. He has contributed to projects including Arc and Arcon, novel systems for batch and stream programming. His work explores efficient runtime architectures for continuous data processing at scale.',
+    expertise: ['Stream Processing', 'Systems Programming', 'Rust', 'Data Analytics'],
     links: {
-      website: 'http://www.cs.cmu.edu/~sandholm/',
-      linkedin: 'https://www.linkedin.com/in/tuomas-sandholm-15b1045',
+      linkedin: 'https://www.linkedin.com/in/klas-segeljakt/',
+      scholar: 'https://scholar.google.com/citations?user=k4bVwsIAAAAJ',
+      github: 'https://github.com/segeljakt',
     },
   },
 ];
@@ -60,9 +73,6 @@ const TeamPage = () => {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[120px]" />
-        
         <div className="container mx-auto px-6 relative z-10">
           <Link
             to="/"
@@ -78,7 +88,7 @@ const TeamPage = () => {
             </span>
             <h1 className="font-orbitron text-4xl md:text-6xl font-bold mb-6">
               <span className="text-foreground">Pioneers of </span>
-              <span className="gradient-text-orbital">Space Computing</span>
+              <span className="text-primary">Space Computing</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
               A world-class team of researchers and technologists pushing the boundaries 
@@ -92,20 +102,28 @@ const TeamPage = () => {
       <section className="section-cosmic pb-32">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 gap-12 max-w-5xl mx-auto">
-            {team.map((member, index) => (
+            {team.map((member) => (
               <article
                 key={member.name}
-                className="card-cosmic rounded-3xl overflow-hidden group"
+                className="rounded-2xl overflow-hidden border border-border/50 bg-card/30 backdrop-blur group"
               >
                 <div className="flex flex-col lg:flex-row">
                   {/* Image Section */}
                   <div className="relative lg:w-80 shrink-0">
-                    <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
+                    <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden bg-muted/30">
+                      {member.image ? (
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <span className="text-6xl font-orbitron text-muted-foreground/30">
+                            {member.name.split(' ').map(n => n[0]).join('')}
+                          </span>
+                        </div>
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-card/50 lg:block hidden" />
                     </div>
@@ -177,6 +195,17 @@ const TeamPage = () => {
                         >
                           <GraduationCap className="w-4 h-4" />
                           <span>Scholar</span>
+                        </a>
+                      )}
+                      {member.links.github && (
+                        <a
+                          href={member.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/30 text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all duration-300 text-sm"
+                        >
+                          <Github className="w-4 h-4" />
+                          <span>GitHub</span>
                         </a>
                       )}
                       {member.links.rise && (
