@@ -1,5 +1,8 @@
 import { Satellite, Globe, Cpu, Zap, Radio, Database } from 'lucide-react';
 
+import riseLogo from '@/assets/logos/rise-logo.svg';
+import snsaLogo from '@/assets/logos/snsa-logo.jpg';
+
 const features = [
   {
     icon: Satellite,
@@ -100,23 +103,31 @@ const MissionSection = () => {
 
         {/* Partners */}
         <div className="mt-20 pt-12 border-t border-border/30">
-          <p className="text-xs tracking-wider text-muted-foreground/60 uppercase mb-6">Funded & Supported By</p>
-          <div className="flex flex-wrap items-center gap-8 md:gap-12">
+          <p className="text-xs tracking-wider text-muted-foreground/60 uppercase mb-8">Funded & Supported By</p>
+          <div className="flex flex-wrap items-center gap-12 md:gap-16">
             <a
               href="https://www.rymdstyrelsen.se/en/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="opacity-70 hover:opacity-100 transition-opacity"
             >
-              <span className="text-sm">Swedish National Space Agency</span>
+              <img 
+                src={snsaLogo} 
+                alt="Swedish National Space Agency" 
+                className="h-12 object-contain brightness-0 invert"
+              />
             </a>
             <a
               href="https://ri.se/en"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="opacity-70 hover:opacity-100 transition-opacity"
             >
-              <span className="text-sm">RISE Research Institutes of Sweden</span>
+              <img 
+                src={riseLogo} 
+                alt="RISE Research Institutes of Sweden" 
+                className="h-10 object-contain brightness-0 invert"
+              />
             </a>
           </div>
         </div>
