@@ -39,7 +39,7 @@ const Hero = () => {
           </p>
 
           {/* Description - Refined */}
-          <p className="text-base text-muted-foreground max-w-xl mx-auto mb-16 leading-relaxed font-light">
+          <p className="text-base md:text-lg text-foreground/90 max-w-xl mx-auto mb-16 leading-relaxed font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             Pioneering on-board satellite processing to revolutionize space-based computing. 
             Moving computation to the edge of space.
           </p>
