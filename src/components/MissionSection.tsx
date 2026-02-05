@@ -53,17 +53,40 @@ const MissionSection = () => {
     <section id="mission" className="py-24">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-4xl mb-20">
           <span className="text-xs tracking-[0.2em] text-muted-foreground/70 uppercase">
             Mission Overview
           </span>
-          <h2 className="font-orbitron text-3xl md:text-4xl font-bold mt-4 mb-6 text-foreground">
-            The Future of Space Computing
+          <h2 className="font-orbitron text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-8 text-foreground leading-tight">
+            The sky is no longer the limit—<br className="hidden md:block" />
+            <span className="text-primary">it's the platform.</span>
           </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Mobile broadband communication and earth observation use cases have pushed the boundaries 
-            of space-based computing. We're developing the operating system for tomorrow's orbital infrastructure.
-          </p>
+          
+          <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <p>
+              Thousands of satellites now orbit Earth, forming an interconnected mesh capable of delivering 
+              broadband anywhere and observing every corner of our planet in unprecedented detail. Yet today, 
+              these orbital fleets face a critical bottleneck: <span className="text-foreground font-medium">bandwidth</span>. 
+              Satellites can see wildfires, track storms, and monitor ecosystems—but transmitting all that data 
+              to Earth overwhelms the downlink spectrum.
+            </p>
+            
+            <p className="text-lg text-foreground font-medium border-l-2 border-primary pl-6 my-8">
+              LeoDOS reimagines satellites as compute nodes, not just relay stations.
+            </p>
+            
+            <p>
+              We're building a distributed operating system for LEO mega-constellations—enabling on-board 
+              processing that transforms raw imagery into actionable intelligence in orbit, before it ever 
+              reaches the ground. <span className="text-foreground">Less data transmitted. Faster insights. Smarter constellations.</span>
+            </p>
+            
+            <p>
+              As of May 2025, over 7,500 Starlink satellites circle the planet. By treating these constellations 
+              as a single, distributed computer, LeoDOS opens new possibilities for wildfire detection, climate 
+              monitoring, maritime tracking, and beyond.
+            </p>
+          </div>
         </div>
 
         {/* Features Grid */}
