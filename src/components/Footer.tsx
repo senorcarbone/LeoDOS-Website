@@ -1,5 +1,5 @@
-import { ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,8 +14,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md mb-6">
-              A Distributed Operating System for LEO mega-constellations. 
-              Funded by the Swedish National Space Agency.
+              A Distributed Operating System for LEO mega-constellations. Funded by the Swedish National Space Agency.
             </p>
             <p className="font-mono text-xs text-muted-foreground/70">DNR 2025-00306</p>
           </div>
@@ -25,10 +24,10 @@ const Footer = () => {
             <h4 className="text-xs tracking-wider text-muted-foreground/70 uppercase mb-4">Navigation</h4>
             <ul className="space-y-3">
               {[
-                { name: 'Home', path: '/' },
-                { name: 'Team', path: '/team' },
-                { name: 'Publications', path: '/publications' },
-                { name: 'Open Source', path: '/opensource' },
+                { name: "Home", path: "/" },
+                { name: "Team", path: "/team" },
+                { name: "Publications", path: "/publications" },
+                { name: "Open Source", path: "/opensource" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -83,12 +82,8 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground/70">
-            © 2025 LeoDOS Project
-          </p>
-          <p className="text-xs text-muted-foreground/70">
-            KTH & RISE Research Institutes of Sweden
-          </p>
+          <p className="text-xs text-muted-foreground/70">© 2025 LeoDOS Project</p>
+          <p className="text-xs text-muted-foreground/70">RISE Research Institutes of Sweden</p>
         </div>
       </div>
     </footer>
