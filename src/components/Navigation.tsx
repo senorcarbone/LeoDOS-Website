@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import riseLogo from '@/assets/logos/rise-logo.svg';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,15 +62,19 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* RISE Logo */}
           <div className="hidden md:block">
             <a
-              href="https://arxiv.org/abs/2601.17589"
+              href="https://ri.se/en"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="opacity-70 hover:opacity-100 transition-opacity"
             >
-              Read Paper →
+              <img 
+                src={riseLogo} 
+                alt="RISE Research Institutes of Sweden" 
+                className="h-6 object-contain brightness-0 invert"
+              />
             </a>
           </div>
 
@@ -101,12 +106,16 @@ const Navigation = () => {
                 </Link>
               ))}
               <a
-                href="https://arxiv.org/abs/2601.17589"
+                href="https://ri.se/en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="py-2 flex items-center"
               >
-                Read Paper →
+                <img 
+                  src={riseLogo} 
+                  alt="RISE Research Institutes of Sweden" 
+                  className="h-5 object-contain brightness-0 invert opacity-70"
+                />
               </a>
             </div>
           </div>
