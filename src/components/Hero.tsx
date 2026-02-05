@@ -1,16 +1,12 @@
-import { ArrowDown, ExternalLink } from 'lucide-react';
-import heroImage from '@/assets/hero-earth.jpg';
+import { ArrowDown, ExternalLink } from "lucide-react";
+import heroImage from "@/assets/hero-earth.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Cinematic Overlay */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Earth from space at night"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Earth from space at night" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
       </div>
 
@@ -35,13 +31,13 @@ const Hero = () => {
             A Distributed Operating System
           </p>
           <p className="text-xl md:text-2xl text-primary mb-16 font-semibold drop-shadow-[0_0_20px_hsl(var(--primary)/0.5)]">
-            for LEO Mega-Constellations
+            for the Space Era
           </p>
 
           {/* Description - Refined */}
           <p className="text-base md:text-lg text-foreground/90 max-w-xl mx-auto mb-16 leading-relaxed font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-            Pioneering on-board satellite processing to revolutionize space-based computing. 
-            Moving computation to the edge of space.
+            Pioneering on-board satellite processing to revolutionize space-based computing. Moving computation to the
+            edge of space.
           </p>
 
           {/* CTAs - Minimal, elegant */}
