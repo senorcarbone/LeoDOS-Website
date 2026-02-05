@@ -1,7 +1,7 @@
 import { Satellite, Globe, Cpu, Zap, Radio, Database } from 'lucide-react';
 
 import riseLogo from '@/assets/logos/rise-logo.svg';
-import snsaLogo from '@/assets/logos/snsa-logo.jpg';
+import snsaLogo from '@/assets/logos/snsa-logo.svg';
 
 const features = [
   {
