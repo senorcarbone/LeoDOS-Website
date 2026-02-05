@@ -29,11 +29,11 @@ interface TeamMember {
 const team: TeamMember[] = [
   {
     name: "Klas Segeljakt",
-    role: "Researcher",
+    role: "Researcher and Space Software Engineer",
     title: "PhD Candidate",
-    organization: "KTH Royal Institute of Technology",
+    organization: "RISE Research Institutes of Sweden",
     image: klasImage,
-    bio: "Klas is a PhD student at KTH focusing on the intersection of Programming Languages and Distributed Systems. He has contributed to Arc and Arcon, novel systems for batch and stream programming, and develops arc-script, a programming language for distributed data parallel stream processing.",
+    bio: "Klas is a PhD student and research engineer focusing on the intersection of Programming Languages and Distributed Systems. He has contributed to Arc and Arcon, novel systems for batch and stream programming, and develops arc-script, a programming language for distributed data parallel stream processing.",
     expertise: ["Stream Processing", "Programming Languages", "Rust", "Distributed Systems"],
     links: {
       linkedin: "https://www.linkedin.com/in/klas-segeljakt/",
@@ -58,7 +58,7 @@ const team: TeamMember[] = [
     name: "Thomas Sandholm",
     role: "Principal Co-Investigator",
     title: "Research Scientist",
-    organization: "RISE",
+    organization: "RISE Research Institutes of Sweden",
     image: thomasImage,
     bio: "Thomas holds a PhD in Computer and Systems Sciences from KTH. He has over 15 years of research experience in distributed systems, computational markets, and social computing. His work focuses on the intersection of machine learning and distributed resource allocation.",
     expertise: ["Machine Learning", "Computational Markets", "Distributed Systems", "Resource Allocation"],
@@ -70,7 +70,7 @@ const team: TeamMember[] = [
     name: "Paris Carbone",
     role: "Principal Co-Investigator",
     title: "Associate Professor of Data Systems",
-    organization: "KTH Royal Institute of Technology & RISE",
+    organization: "KTH Royal Institute of Technology & RISE Research Institutes of Sweden",
     image: parisImage,
     bio: "Paris leads the Data Systems Lab at KTH and RISE. He holds a PhD in Distributed Computer Systems from KTH and has been a core open source committer for Apache Flink. His research spans distributed algorithms, databases, and data management to declarative programming support for data analytics and AI.",
     expertise: ["Distributed Systems", "Stream Processing", "Apache Flink", "Space Computing"],
