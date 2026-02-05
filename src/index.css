@@ -1,0 +1,387 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LeoDOS Cosmic Design System - Space-age futuristic theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    /* Deep space dark theme - primary mode */
+    --background: 228 25% 4%;
+    --foreground: 210 40% 96%;
+
+    --card: 228 30% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 228 30% 6%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Electric cyan - primary accent */
+    --primary: 185 100% 50%;
+    --primary-foreground: 228 25% 4%;
+
+    /* Deep space blue - secondary */
+    --secondary: 220 60% 15%;
+    --secondary-foreground: 210 40% 96%;
+
+    /* Muted cosmic dust */
+    --muted: 228 20% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    /* Amber energy accent */
+    --accent: 35 100% 55%;
+    --accent-foreground: 228 25% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 30% 18%;
+    --input: 220 30% 15%;
+    --ring: 185 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom cosmic colors */
+    --cosmic-void: 228 35% 3%;
+    --cosmic-deep: 228 30% 6%;
+    --cosmic-surface: 228 25% 10%;
+    --nebula: 280 60% 45%;
+    --nebula-glow: 280 80% 60%;
+    --orbital-cyan: 185 100% 50%;
+    --orbital-cyan-dim: 185 70% 35%;
+    --energy-amber: 35 100% 55%;
+    --energy-amber-dim: 35 80% 40%;
+    --starlight: 210 40% 96%;
+    --stellar-blue: 210 80% 60%;
+
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(228 35% 3%) 0%, hsl(228 30% 8%) 50%, hsl(260 30% 10%) 100%);
+    --gradient-orbital: linear-gradient(90deg, hsl(185 100% 50%) 0%, hsl(210 80% 60%) 100%);
+    --gradient-energy: linear-gradient(90deg, hsl(35 100% 55%) 0%, hsl(25 100% 60%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(228 30% 10%) 0%, hsl(228 30% 6%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(185 100% 50% / 0.15) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-glow-cyan: 0 0 30px hsl(185 100% 50% / 0.3), 0 0 60px hsl(185 100% 50% / 0.1);
+    --shadow-glow-amber: 0 0 30px hsl(35 100% 55% / 0.3), 0 0 60px hsl(35 100% 55% / 0.1);
+    --shadow-card: 0 4px 24px hsl(228 35% 3% / 0.8), 0 0 1px hsl(185 100% 50% / 0.2);
+
+    --sidebar-background: 228 30% 6%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 228 25% 4%;
+    --sidebar-accent: 228 25% 12%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 185 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    background: var(--gradient-cosmic);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  code, pre, .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Glowing text effects */
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(185 100% 50% / 0.5), 0 0 30px hsl(185 100% 50% / 0.3);
+  }
+
+  .text-glow-amber {
+    text-shadow: 0 0 10px hsl(35 100% 55% / 0.5), 0 0 30px hsl(35 100% 55% / 0.3);
+  }
+
+  /* Orbital ring animation */
+  .orbital-ring {
+    animation: orbit 20s linear infinite;
+  }
+
+  .orbital-ring-reverse {
+    animation: orbit 25s linear infinite reverse;
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-delayed {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+
+  /* Pulse glow */
+  .pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  /* Particle float */
+  .particle {
+    animation: particleFloat 8s ease-in-out infinite;
+  }
+
+  /* Card hover effects */
+  .card-cosmic {
+    @apply relative overflow-hidden;
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-cosmic::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, hsl(185 100% 50% / 0.05) 0%, transparent 50%);
+  }
+
+  .card-cosmic:hover {
+    border-color: hsl(185 100% 50% / 0.3);
+    box-shadow: var(--shadow-glow-cyan), var(--shadow-card);
+    transform: translateY(-4px);
+  }
+
+  .card-cosmic:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-xl;
+    background: hsl(var(--card) / 0.7);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Scan line effect */
+  .scan-lines::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(185 100% 50% / 0.01) 2px,
+      hsl(185 100% 50% / 0.01) 4px
+    );
+  }
+
+  /* Gradient text */
+  .gradient-text-orbital {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-orbital);
+  }
+
+  .gradient-text-energy {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-energy);
+  }
+
+  /* Navigation link */
+  .nav-link {
+    @apply relative px-4 py-2 text-muted-foreground transition-all duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 transition-all duration-300;
+    background: var(--gradient-orbital);
+  }
+
+  .nav-link:hover {
+    @apply text-primary;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-primary;
+  }
+
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  /* Button cosmic variant */
+  .btn-cosmic {
+    @apply relative overflow-hidden px-6 py-3 font-semibold transition-all duration-300;
+    background: linear-gradient(135deg, hsl(185 100% 50% / 0.1) 0%, hsl(210 80% 60% / 0.1) 100%);
+    border: 1px solid hsl(185 100% 50% / 0.3);
+    color: hsl(var(--primary));
+  }
+
+  .btn-cosmic:hover {
+    background: linear-gradient(135deg, hsl(185 100% 50% / 0.2) 0%, hsl(210 80% 60% / 0.2) 100%);
+    border-color: hsl(185 100% 50% / 0.6);
+    box-shadow: var(--shadow-glow-cyan);
+  }
+
+  .btn-cosmic-solid {
+    @apply relative overflow-hidden px-6 py-3 font-semibold transition-all duration-300;
+    background: var(--gradient-orbital);
+    color: hsl(var(--primary-foreground));
+    border: none;
+  }
+
+  .btn-cosmic-solid:hover {
+    box-shadow: var(--shadow-glow-cyan);
+    transform: translateY(-2px);
+  }
+
+  /* Section styling */
+  .section-cosmic {
+    @apply relative py-24 overflow-hidden;
+  }
+
+  .section-cosmic::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: var(--gradient-glow);
+    opacity: 0.5;
+  }
+}
+
+@layer utilities {
+  /* Orbital animations */
+  @keyframes orbit {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      opacity: 0.5;
+      filter: blur(20px);
+    }
+    50% {
+      opacity: 0.8;
+      filter: blur(30px);
+    }
+  }
+
+  @keyframes particleFloat {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 0.5;
+    }
+    25% {
+      transform: translateY(-30px) translateX(10px) scale(1.1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-10px) translateX(-10px) scale(0.9);
+      opacity: 0.6;
+    }
+    75% {
+      transform: translateY(-40px) translateX(5px) scale(1.05);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(185 100% 50% / 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Fade in animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-700 {
+    animation-delay: 700ms;
+  }
+}
