@@ -37,6 +37,8 @@ const team: TeamMember[] = [
     expertise: ["Machine Learning", "Computational Markets", "Distributed Systems", "Resource Allocation"],
     links: {
       linkedin: "https://www.linkedin.com/in/thomassandholm/",
+      scholar: "https://scholar.google.com/citations?user=Kt9FJtQAAAAJ&hl=en",
+      github: "https://github.com/patompa",
     },
   },
   {
