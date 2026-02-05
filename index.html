@@ -51,6 +51,18 @@
   </head>
 
   <body>
+    <script>
+      // Handle SPA redirects from 404.html
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var path = params.get('p');
+        if (path) {
+          var search = params.get('q') ? '?' + params.get('q') : '';
+          var hash = params.get('h') ? '#' + params.get('h') : '';
+          window.history.replaceState(null, '', '/' + path + search + hash);
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
