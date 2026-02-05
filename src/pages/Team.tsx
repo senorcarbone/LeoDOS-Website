@@ -4,18 +4,36 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import StarField from '@/components/StarField';
 
-import bernardoImage from '@/assets/team/bernardo-huberman.jpg';
-import thomasImage from '@/assets/team/thomas-sandholm.jpg';
 import parisImage from '@/assets/team/paris-carbone.jpg';
+import thomasImage from '@/assets/team/thomas-sandholm.jpg';
+import bernardoImage from '@/assets/team/bernardo-huberman.jpg';
+import klasImage from '@/assets/team/klas-segeljakt.png';
 
-const team = [
+interface TeamMember {
+  name: string;
+  role: string;
+  title: string;
+  organization: string;
+  image: string | null;
+  bio: string;
+  expertise: string[];
+  links: {
+    website?: string;
+    linkedin?: string;
+    scholar?: string;
+    github?: string;
+    rise?: string;
+  };
+}
+
+const team: TeamMember[] = [
   {
     name: 'Paris Carbone',
     role: 'Principal Investigator',
-    title: 'Senior Researcher & Head of Distributed Computing',
-    organization: 'RISE Research Institutes of Sweden',
+    title: 'Associate Professor of Data Systems',
+    organization: 'KTH Royal Institute of Technology & RISE',
     image: parisImage,
-    bio: 'Paris is the research leader of the Distributed Computing group at RISE SICS. He holds a PhD in Distributed Computer Systems from KTH and has been a core open source committer for Apache Flink, a leading system in data stream processing. His work spans scalable data processing, consistent state management, and space-based distributed systems.',
+    bio: 'Paris leads the Data Systems Lab at KTH and RISE. He holds a PhD in Distributed Computer Systems from KTH and has been a core open source committer for Apache Flink. His research spans distributed algorithms, databases, and data management to declarative programming support for data analytics and AI.',
     expertise: ['Distributed Systems', 'Stream Processing', 'Apache Flink', 'Space Computing'],
     links: {
       website: 'https://datasystems.nu',
@@ -27,10 +45,10 @@ const team = [
   {
     name: 'Thomas Sandholm',
     role: 'Technical Advisor',
-    title: 'AI & Distributed Systems Researcher',
+    title: 'Research Scientist',
     organization: 'KTH / RISE',
     image: thomasImage,
-    bio: 'Thomas received his PhD from KTH in computational markets and statistical methods. His research focuses on the intersection of machine learning, distributed systems, and resource allocation. He brings deep expertise in market-based approaches to distributed computing and optimization.',
+    bio: 'Thomas holds a PhD in Computer and Systems Sciences from KTH. He has over 15 years of research experience in distributed systems, computational markets, and social computing. His work focuses on the intersection of machine learning and distributed resource allocation.',
     expertise: ['Machine Learning', 'Computational Markets', 'Distributed Systems', 'Resource Allocation'],
     links: {
       linkedin: 'https://www.linkedin.com/in/thomassandholm/',
@@ -42,8 +60,8 @@ const team = [
     title: 'Distinguished Visiting Scientist',
     organization: 'RISE Research Institutes of Sweden',
     image: bernardoImage,
-    bio: 'A technology pioneer and futurist, Bernardo has played a key role as a thought leader in emergent technologies. His early foresights have shaped our digital reality. He brings decades of experience in complex systems, social computation, and distributed architectures to the LeoDOS project.',
-    expertise: ['Complex Systems', 'Social Computation', 'Emergent Technologies', 'Systems Theory'],
+    bio: 'Bernardo is an HP Fellow and former Director of the Systems Research Center at Hewlett Packard Laboratories. He received his PhD in Physics from the University of Pennsylvania and is a Consulting Professor at Stanford University. A pioneer in complex systems and social computation.',
+    expertise: ['Complex Systems', 'Social Computation', 'Information Dynamics', 'Systems Theory'],
     links: {
       linkedin: 'https://www.linkedin.com/in/bernardo-huberman-39b40823/',
       scholar: 'https://scholar.google.com/citations?user=b_GVwg0AAAAJ',
@@ -52,11 +70,11 @@ const team = [
   {
     name: 'Klas Segeljakt',
     role: 'Researcher',
-    title: 'Distributed Systems Researcher',
-    organization: 'RISE Research Institutes of Sweden',
-    image: null, // Placeholder - we'll need to add this image
-    bio: 'Klas is a researcher focusing on distributed stream processing and data-intensive systems. He has contributed to projects including Arc and Arcon, novel systems for batch and stream programming. His work explores efficient runtime architectures for continuous data processing at scale.',
-    expertise: ['Stream Processing', 'Systems Programming', 'Rust', 'Data Analytics'],
+    title: 'PhD Candidate',
+    organization: 'KTH Royal Institute of Technology',
+    image: klasImage,
+    bio: 'Klas is a PhD student at KTH focusing on the intersection of Programming Languages and Distributed Systems. He has contributed to Arc and Arcon, novel systems for batch and stream programming, and develops arc-script, a programming language for distributed data parallel stream processing.',
+    expertise: ['Stream Processing', 'Programming Languages', 'Rust', 'Distributed Systems'],
     links: {
       linkedin: 'https://www.linkedin.com/in/klas-segeljakt/',
       scholar: 'https://scholar.google.com/citations?user=k4bVwsIAAAAJ',
@@ -65,6 +83,121 @@ const team = [
   },
 ];
 
+const TeamMemberCard = ({ member }: { member: TeamMember }) => (
+  <article className="group">
+    <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+      {/* Image */}
+      <div className="md:w-48 shrink-0">
+        <div className="aspect-square relative overflow-hidden rounded-lg bg-muted/30">
+          {member.image ? (
+            <img
+              src={member.image}
+              alt={member.name}
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="text-4xl font-orbitron text-muted-foreground/30">
+                {member.name.split(' ').map(n => n[0]).join('')}
+              </span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="flex-1">
+        <div className="mb-4">
+          <span className="text-xs tracking-wider text-primary/80 uppercase font-medium">
+            {member.role}
+          </span>
+          <h2 className="font-orbitron text-2xl font-semibold text-foreground mt-1">
+            {member.name}
+          </h2>
+          <p className="text-sm text-muted-foreground mt-1">
+            {member.title} · {member.organization}
+          </p>
+        </div>
+
+        <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
+          {member.bio}
+        </p>
+
+        {/* Expertise */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {member.expertise.map((skill) => (
+            <span
+              key={skill}
+              className="px-3 py-1 text-xs bg-muted/30 text-muted-foreground rounded-full border border-border/30"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+
+        {/* Links */}
+        <div className="flex flex-wrap items-center gap-3">
+          {member.links.website && (
+            <a
+              href={member.links.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Globe className="w-4 h-4" />
+              <span>Website</span>
+            </a>
+          )}
+          {member.links.linkedin && (
+            <a
+              href={member.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Linkedin className="w-4 h-4" />
+              <span>LinkedIn</span>
+            </a>
+          )}
+          {member.links.scholar && (
+            <a
+              href={member.links.scholar}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <GraduationCap className="w-4 h-4" />
+              <span>Scholar</span>
+            </a>
+          )}
+          {member.links.github && (
+            <a
+              href={member.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Github className="w-4 h-4" />
+              <span>GitHub</span>
+            </a>
+          )}
+          {member.links.rise && (
+            <a
+              href={member.links.rise}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              <span>RISE</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </article>
+);
+
 const TeamPage = () => {
   return (
     <div className="min-h-screen relative">
@@ -72,157 +205,37 @@ const TeamPage = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm font-mono">Back to Home</span>
+            <span className="text-sm">Back</span>
           </Link>
 
-          <div className="text-center">
-            <span className="inline-block px-4 py-1 rounded-full text-xs font-mono text-primary border border-primary/30 mb-4">
-              THE TEAM
+          <div className="max-w-2xl">
+            <span className="text-xs tracking-[0.2em] text-muted-foreground/70 uppercase">
+              Research Team
             </span>
-            <h1 className="font-orbitron text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-foreground">Pioneers of </span>
-              <span className="text-primary">Space Computing</span>
+            <h1 className="font-orbitron text-4xl md:text-5xl font-bold mt-4 mb-6 text-foreground">
+              The People Behind LeoDOS
             </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              A world-class team of researchers and technologists pushing the boundaries 
-              of distributed computing beyond Earth's atmosphere.
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              A team of researchers pushing the boundaries of distributed computing 
+              beyond Earth's atmosphere.
             </p>
           </div>
         </div>
       </section>
 
       {/* Team Grid */}
-      <section className="section-cosmic pb-32">
+      <section className="pb-32">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 gap-12 max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-16">
             {team.map((member) => (
-              <article
-                key={member.name}
-                className="rounded-2xl overflow-hidden border border-border/50 bg-card/30 backdrop-blur group"
-              >
-                <div className="flex flex-col lg:flex-row">
-                  {/* Image Section */}
-                  <div className="relative lg:w-80 shrink-0">
-                    <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden bg-muted/30">
-                      {member.image ? (
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center">
-                          <span className="text-6xl font-orbitron text-muted-foreground/30">
-                            {member.name.split(' ').map(n => n[0]).join('')}
-                          </span>
-                        </div>
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-card/50 lg:block hidden" />
-                    </div>
-                    
-                    {/* Role Badge */}
-                    <div className="absolute bottom-4 left-4 right-4 lg:right-auto">
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-mono bg-primary/20 text-primary border border-primary/30">
-                        {member.role}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="flex-1 p-8 lg:p-10">
-                    <div className="mb-6">
-                      <h2 className="font-orbitron text-2xl lg:text-3xl font-bold text-foreground mb-2">
-                        {member.name}
-                      </h2>
-                      <p className="text-primary font-medium mb-1">{member.title}</p>
-                      <p className="text-sm text-muted-foreground">{member.organization}</p>
-                    </div>
-
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      {member.bio}
-                    </p>
-
-                    {/* Expertise Tags */}
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {member.expertise.map((skill) => (
-                        <span
-                          key={skill}
-                          className="px-3 py-1 rounded-full text-xs bg-muted/50 text-muted-foreground border border-border/50"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex flex-wrap items-center gap-3">
-                      {member.links.website && (
-                        <a
-                          href={member.links.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/30 text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all duration-300 text-sm"
-                        >
-                          <Globe className="w-4 h-4" />
-                          <span>Website</span>
-                        </a>
-                      )}
-                      {member.links.linkedin && (
-                        <a
-                          href={member.links.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/30 text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all duration-300 text-sm"
-                        >
-                          <Linkedin className="w-4 h-4" />
-                          <span>LinkedIn</span>
-                        </a>
-                      )}
-                      {member.links.scholar && (
-                        <a
-                          href={member.links.scholar}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/30 text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all duration-300 text-sm"
-                        >
-                          <GraduationCap className="w-4 h-4" />
-                          <span>Scholar</span>
-                        </a>
-                      )}
-                      {member.links.github && (
-                        <a
-                          href={member.links.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/30 text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all duration-300 text-sm"
-                        >
-                          <Github className="w-4 h-4" />
-                          <span>GitHub</span>
-                        </a>
-                      )}
-                      {member.links.rise && (
-                        <a
-                          href={member.links.rise}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/30 text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all duration-300 text-sm"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          <span>RISE Profile</span>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </article>
+              <TeamMemberCard key={member.name} member={member} />
             ))}
           </div>
         </div>
