@@ -62,8 +62,8 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* RISE Logo */}
-          <div className="hidden md:block">
+          {/* RISE Logo & Swedish Flag */}
+          <div className="hidden md:flex items-center gap-4">
             <a
               href="https://ri.se/en"
               target="_blank"
@@ -76,6 +76,7 @@ const Navigation = () => {
                 className="h-6 object-contain brightness-0 invert"
               />
             </a>
+            <span className="text-lg" title="Made in Sweden">🇸🇪</span>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,18 +106,20 @@ const Navigation = () => {
                   {link.name}
                 </Link>
               ))}
-              <a
-                href="https://ri.se/en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-2 flex items-center"
-              >
-                <img 
-                  src={riseLogo} 
-                  alt="RISE Research Institutes of Sweden" 
-                  className="h-5 object-contain brightness-0 invert opacity-70"
-                />
-              </a>
+              <div className="py-2 flex items-center gap-3">
+                <a
+                  href="https://ri.se/en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img 
+                    src={riseLogo} 
+                    alt="RISE Research Institutes of Sweden" 
+                    className="h-5 object-contain brightness-0 invert opacity-70"
+                  />
+                </a>
+                <span className="text-lg" title="Made in Sweden">🇸🇪</span>
+              </div>
             </div>
           </div>
         )}
