@@ -106,7 +106,7 @@ const MissionSection = () => {
           <p className="text-xs tracking-wider text-muted-foreground/60 uppercase mb-8">Funded & Supported By</p>
           <div className="flex flex-wrap items-center gap-12 md:gap-16">
             <a
-              href="https://www.rymdstyrelsen.se/en/"
+              href="https://www.rymdstyrelsen.se/"
               target="_blank"
               rel="noopener noreferrer"
               className="opacity-70 hover:opacity-100 transition-opacity"
@@ -114,7 +114,7 @@ const MissionSection = () => {
               <img 
                 src={snsaLogo} 
                 alt="Swedish National Space Agency" 
-                className="h-12 object-contain brightness-0 invert"
+                className="h-12 object-contain invert"
               />
             </a>
             <a
