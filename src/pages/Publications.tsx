@@ -7,7 +7,7 @@ import StarField from "@/components/StarField";
 const publications = [
   {
     title: "Lightspeed Data Compute for the Space Era",
-    authors: ["Thomas Sandholm", "Bernardo Huberman", "Klas Segeljakt", "Paris Carbone"],
+    authors: ["Thomas Sandholm", "Bernardo A. Huberman", "Klas Segeljakt", "Paris Carbone"],
     venue: "arXiv Preprint",
     year: "2026",
     abstract:
@@ -29,7 +29,7 @@ const publications = [
   },
   {
     title: "LeoDist: A Distributed Ledger On-board LEO Satellites",
-    authors: [],
+    authors: ["Thomas Sandholm", "Sayandev Mukherjee", "John Feland", "Bernardo A. Huberman"],
     venue: "IEEE SMC-IT/SCC 2025",
     year: "2025",
     abstract:
@@ -40,7 +40,7 @@ const publications = [
   },
   {
     title: "A Cloud in the Sky: Geo-Aware On-board Data Services for LEO Satellites",
-    authors: ["Thomas Sandholm, Sayandev Mukherjee, Bernardo Huberman"],
+    authors: ["Thomas Sandholm", "Sayandev Mukherjee", "Bernardo A. Huberman"],
     venue: "arXiv Preprint",
     year: "2024",
     abstract:
