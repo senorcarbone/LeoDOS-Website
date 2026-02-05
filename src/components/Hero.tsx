@@ -33,7 +33,7 @@ const Hero = () => {
           </p>
 
           {/* Description - Refined */}
-          <p className="text-base md:text-lg text-foreground/90 max-w-xl mx-auto mb-16 leading-relaxed font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+          <p className="text-base md:text-lg text-foreground max-w-xl mx-auto mb-16 leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             Pioneering on-board satellite processing to revolutionize space-based computing. Moving computation to the
             edge of space.
           </p>
