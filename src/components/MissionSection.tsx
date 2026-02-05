@@ -82,7 +82,7 @@ const MissionSection = () => {
             </p>
             
             <p>
-              As of May 2025, over 7,500 Starlink satellites circle the planet. By treating these constellations 
+              As of February 2026, nearly 10,000 Starlink satellites circle the planet. By treating these constellations 
               as a single, distributed computer, LeoDOS opens new possibilities for wildfire detection, climate 
               monitoring, maritime tracking, and beyond.
             </p>
