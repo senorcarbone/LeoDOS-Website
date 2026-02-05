@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# ArcAI Project
 
 ## Project info
 
