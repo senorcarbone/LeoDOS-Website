@@ -18,14 +18,14 @@ const publications = [
   {
     title: "SkyMemory: A LEO Edge Cache for Transformer Inference Optimization and Scale Out",
     authors: ["Thomas Sandholm", "Sayandev Mukherjee", "Lin Cheng", "Bernardo A. Huberman"],
-    venue: "arXiv Preprint",
-    year: "2025",
+    venue: "IEEE CCNC/COMPASS",
+    year: "2026",
     abstract:
       "SkyMemory introduces a novel edge caching architecture for LEO satellites that optimizes transformer-based inference workloads, enabling efficient scale-out of AI models in orbital computing environments.",
     link: "https://arxiv.org/abs/2505.14427",
     slidesLink:
       "https://www.slideshare.net/slideshow/skymemory-a-leo-edge-cache-for-transformer-inference-optimization-and-scale-out/285119984",
-    type: "Preprint",
+    type: "Workshop",
   },
   {
     title: "LeoDist: A Distributed Ledger On-board LEO Satellites",
