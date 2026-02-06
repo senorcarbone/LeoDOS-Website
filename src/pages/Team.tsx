@@ -33,7 +33,7 @@ const team: TeamMember[] = [
     title: "Research Scientist, PhD",
     organization: "RISE Research Institutes of Sweden",
     image: thomasImage,
-    bio: "Thomas holds a PhD in Computer and Systems Sciences from KTH. He has over 15 years of research experience in distributed systems, computational markets, and social computing. His work focuses on the intersection of machine learning and distributed resource allocation.",
+    bio: "Thomas holds a PhD in Computer and Systems Sciences from KTH. He has over 30 years of research and software development experience in distributed systems, including AI, IoT, Cloud computing and Wireless Networks. His work focuses on the intersection of machine learning/AI and distributed resource allocation.",
     expertise: ["Machine Learning", "Computational Markets", "Distributed Systems", "Resource Allocation"],
     links: {
       website: "https://www.ri.se/en/person/thomas-sandholm",
