@@ -19,7 +19,7 @@ const publications = [
     title: "SkyMemory: A LEO Edge Cache for Transformer Inference Optimization and Scale Out",
     authors: ["Thomas Sandholm", "Lin Cheng", "Bernardo A. Huberman"],
     venue: "IEEE CCNC/COMPASS",
-    year: "2026",
+    year: "2025",
     abstract:
       "SkyMemory introduces a novel edge caching architecture for LEO satellites that optimizes transformer-based inference workloads, enabling efficient scale-out of AI models in orbital computing environments.",
     link: "https://arxiv.org/abs/2505.14427",
