@@ -48,7 +48,7 @@ const team: TeamMember[] = [
     title: "PhD Candidate",
     organization: "RISE Research Institutes of Sweden",
     image: klasImage,
-    bio: "Klas is a PhD student and research engineer focusing on the intersection of Programming Languages and Distributed Systems. He has contributed to Arc and Arcon, novel systems for batch and stream programming, and develops arc-script, a programming language for distributed data parallel stream processing.",
+    bio: "Klas is a PhD student and research engineer focusing on the intersection of Programming Languages and Distributed Systems. He has contributed to Arc and Arcon, novel systems for batch and stream programming, and develops Aqua, a programming language for distributed data parallel stream processing.",
     expertise: ["Stream Processing", "Programming Languages", "Rust", "Distributed Systems"],
     links: {
       linkedin: "https://www.linkedin.com/in/klas-segeljakt/",
