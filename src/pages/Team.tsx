@@ -75,7 +75,7 @@ const team: TeamMember[] = [
     title: "Professor of Data Systems",
     organization: "KTH Royal Institute of Technology & RISE Research Institutes of Sweden",
     image: parisImage,
-    bio: "Paris leads the Data Systems Lab at KTH and RISE. He has been a core open source committer for Apache Flink since the start. His research spans distributed algorithms, scalable transactional data systems, coordination-avoidance and declarative programming support for AI.",
+    bio: "Paris leads the Data Systems Lab at KTH and RISE. He has been a core open source committer for Apache Flink since the start. His research spans distributed algorithms, scalable transactional data systems, coordination-avoidance and declarative programming support for AI and data apps.",
     expertise: ["Distributed Systems", "Stream Processing", "Apache Flink", "Space Computing"],
     links: {
       website: "https://datasystems.nu",
