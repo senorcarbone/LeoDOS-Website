@@ -1,50 +1,50 @@
-import { Satellite, Globe, Cpu, Zap, Radio, Database } from 'lucide-react';
+import { Satellite, Globe, Cpu, Zap, Radio, Database } from "lucide-react";
 
-import riseLogo from '@/assets/logos/rise-logo.svg';
-import snsaLogo from '@/assets/logos/snsa-logo.svg';
+import riseLogo from "@/assets/logos/rise-logo.svg";
+import snsaLogo from "@/assets/logos/snsa-logo.svg";
 
 const features = [
   {
     icon: Satellite,
-    title: 'LEO Constellation',
-    description: 'Thousands of inter-linked satellites providing global coverage and low-latency connectivity.',
-    stat: '7,578+',
-    statLabel: 'Starlink Satellites',
+    title: "LEO Constellation",
+    description: "Thousands of inter-linked satellites providing global coverage and low-latency connectivity.",
+    stat: "~10,000+",
+    statLabel: "Starlink Satellites",
   },
   {
     icon: Cpu,
-    title: 'Edge Computing',
-    description: 'On-board satellite processing reduces data transmission to ground stations dramatically.',
-    stat: '10x',
-    statLabel: 'Data Reduction',
+    title: "Edge Computing",
+    description: "On-board satellite processing reduces data transmission to ground stations dramatically.",
+    stat: "10x",
+    statLabel: "Data Reduction",
   },
   {
     icon: Radio,
-    title: 'Spectrum Optimization',
-    description: 'Intelligent bandwidth management across S, C, Ku, and Ka spectrum bands.',
-    stat: '3GPP',
-    statLabel: 'NTN Standard',
+    title: "Spectrum Optimization",
+    description: "Intelligent bandwidth management across S, C, Ku, and Ka spectrum bands.",
+    stat: "3GPP",
+    statLabel: "NTN Standard",
   },
   {
     icon: Globe,
-    title: 'Earth Observation',
-    description: 'Real-time wildfire detection, disaster monitoring, and environmental sensing.',
-    stat: '24/7',
-    statLabel: 'Global Coverage',
+    title: "Earth Observation",
+    description: "Real-time wildfire detection, disaster monitoring, and environmental sensing.",
+    stat: "24/7",
+    statLabel: "Global Coverage",
   },
   {
     icon: Database,
-    title: 'Distributed State',
-    description: 'Consistent stateful processing across the orbital mesh network.',
-    stat: 'µs',
-    statLabel: 'Latency',
+    title: "Distributed State",
+    description: "Consistent stateful processing across the orbital mesh network.",
+    stat: "µs",
+    statLabel: "Latency",
   },
   {
     icon: Zap,
-    title: 'Lightspeed Data',
-    description: 'Compute at the speed of light—processing data where it\'s captured.',
-    stat: '∞',
-    statLabel: 'Scalability',
+    title: "Lightspeed Data",
+    description: "Compute at the speed of light—processing data where it's captured.",
+    stat: "∞",
+    statLabel: "Scalability",
   },
 ];
 
@@ -54,36 +54,35 @@ const MissionSection = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-4xl mb-20">
-          <span className="text-xs tracking-[0.2em] text-muted-foreground/70 uppercase">
-            Mission Overview
-          </span>
+          <span className="text-xs tracking-[0.2em] text-muted-foreground/70 uppercase">Mission Overview</span>
           <h2 className="font-orbitron text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-8 text-foreground leading-tight">
-            The sky is no longer the limit—<br className="hidden md:block" />
+            The sky is no longer the limit—
+            <br className="hidden md:block" />
             <span className="text-primary">it's the platform.</span>
           </h2>
-          
+
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              Thousands of satellites now orbit Earth, forming an interconnected mesh capable of delivering 
-              broadband anywhere and observing every corner of our planet in unprecedented detail. Yet today, 
-              these orbital fleets face a critical bottleneck: <span className="text-foreground font-medium">bandwidth</span>. 
-              Satellites can see wildfires, track storms, and monitor ecosystems—but transmitting all that data 
-              to Earth overwhelms the downlink spectrum.
+              Thousands of satellites now orbit Earth, forming an interconnected mesh capable of delivering broadband
+              anywhere and observing every corner of our planet in unprecedented detail. Yet today, these orbital fleets
+              face a critical bottleneck: <span className="text-foreground font-medium">bandwidth</span>. Satellites can
+              see wildfires, track storms, and monitor ecosystems—but transmitting all that data to Earth overwhelms the
+              downlink spectrum.
             </p>
-            
+
             <p className="text-lg text-foreground font-medium border-l-2 border-primary pl-6 my-8">
               LeoDOS reimagines satellites as compute nodes, not just relay stations.
             </p>
-            
+
             <p>
-              We're building a distributed operating system for LEO mega-constellations—enabling on-board 
-              processing that transforms raw imagery into actionable intelligence in orbit, before it ever 
-              reaches the ground. <span className="text-foreground">Less data transmitted. Faster insights. Smarter constellations.</span>
+              We're building a distributed operating system for LEO mega-constellations—enabling on-board processing
+              that transforms raw imagery into actionable intelligence in orbit, before it ever reaches the ground.{" "}
+              <span className="text-foreground">Less data transmitted. Faster insights. Smarter constellations.</span>
             </p>
-            
+
             <p>
-              As of February 2026, nearly 10,000 Starlink satellites circle the planet. By treating these constellations 
-              as a single, distributed computer, LeoDOS opens new possibilities for wildfire detection, climate 
+              As of February 2026, nearly 10,000 Starlink satellites circle the planet. By treating these constellations
+              as a single, distributed computer, LeoDOS opens new possibilities for wildfire detection, climate
               monitoring, maritime tracking, and beyond.
             </p>
           </div>
@@ -104,21 +103,13 @@ const MissionSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                {feature.description}
-              </p>
+              <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">{feature.description}</p>
 
               {/* Stat */}
               <div className="flex items-baseline gap-2 pt-4 border-t border-border/30">
-                <span className="font-orbitron text-xl font-semibold text-primary">
-                  {feature.stat}
-                </span>
-                <span className="text-xs text-muted-foreground uppercase tracking-wider">
-                  {feature.statLabel}
-                </span>
+                <span className="font-orbitron text-xl font-semibold text-primary">{feature.stat}</span>
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">{feature.statLabel}</span>
               </div>
             </div>
           ))}
@@ -134,11 +125,7 @@ const MissionSection = () => {
               rel="noopener noreferrer"
               className="opacity-70 hover:opacity-100 transition-opacity"
             >
-              <img 
-                src={snsaLogo} 
-                alt="Swedish National Space Agency" 
-                className="h-12 object-contain invert"
-              />
+              <img src={snsaLogo} alt="Swedish National Space Agency" className="h-12 object-contain invert" />
             </a>
             <a
               href="https://ri.se/en"
@@ -146,9 +133,9 @@ const MissionSection = () => {
               rel="noopener noreferrer"
               className="opacity-70 hover:opacity-100 transition-opacity"
             >
-              <img 
-                src={riseLogo} 
-                alt="RISE Research Institutes of Sweden" 
+              <img
+                src={riseLogo}
+                alt="RISE Research Institutes of Sweden"
                 className="h-10 object-contain brightness-0 invert"
               />
             </a>
