@@ -72,7 +72,7 @@ const team: TeamMember[] = [
   {
     name: "Paris Carbone",
     role: "Principal Co-Investigator",
-    title: "Professor of Data Systems",
+    title: "Assoc Professor of Data Systems",
     organization: "KTH Royal Institute of Technology & RISE Research Institutes of Sweden",
     image: parisImage,
     bio: "Paris leads the Data Systems Lab at KTH and RISE. He has been a core open source committer for Apache Flink since the start. His research spans distributed algorithms, scalable transactional data systems, coordination-avoidance and declarative programming support for AI and data apps.",
