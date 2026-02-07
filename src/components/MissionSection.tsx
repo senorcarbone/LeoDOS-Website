@@ -42,7 +42,8 @@ const features = [
   {
     icon: Zap,
     title: "Lightspeed Fast",
-    description: "Compute at the speed of light—processing data where it's captured.",
+    description:
+      "Use the latest intersatellite-laser technology and compute data at the speed of light while it's captured.",
     stat: "∞",
     statLabel: "Light is the Limit",
   },
