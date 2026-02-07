@@ -6,7 +6,7 @@ import snsaLogo from "@/assets/logos/snsa-logo.svg";
 const features = [
   {
     icon: Satellite,
-    title: "LEO Constellation",
+    title: "LEO Constellation-Ready",
     description: "Thousands of inter-linked satellites providing global coverage and low-latency connectivity.",
     stat: "~10,000+",
     statLabel: "Starlink Satellites",
@@ -20,7 +20,7 @@ const features = [
   },
   {
     icon: Radio,
-    title: "Spectrum Optimization",
+    title: "Spectrum Optimized",
     description: "Intelligent bandwidth management across S, C, Ku, and Ka spectrum bands.",
     stat: "3GPP",
     statLabel: "NTN Standard",
