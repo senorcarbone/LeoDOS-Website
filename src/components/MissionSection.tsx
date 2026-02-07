@@ -34,14 +34,14 @@ const features = [
   },
   {
     icon: Database,
-    title: "Distributed State",
+    title: "Distributed & Stateful",
     description: "Consistent stateful processing across the orbital mesh network.",
     stat: "↓ µs",
     statLabel: "Local First Execution",
   },
   {
     icon: Zap,
-    title: "Lightspeed Data",
+    title: "Lightspeed Data Compute",
     description: "Compute at the speed of light—processing data where it's captured.",
     stat: "∞",
     statLabel: "Scalability",
