@@ -36,8 +36,8 @@ const features = [
     icon: Database,
     title: "Distributed State",
     description: "Consistent stateful processing across the orbital mesh network.",
-    stat: "µs",
-    statLabel: "Latency",
+    stat: "↓ µs",
+    statLabel: "Local First Execution",
   },
   {
     icon: Zap,
