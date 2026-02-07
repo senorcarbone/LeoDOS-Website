@@ -8,6 +8,12 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
+  // Reset scroll state when route changes and scroll to top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setIsScrolled(false);
+  }, [location.pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
