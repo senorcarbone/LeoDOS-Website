@@ -13,7 +13,7 @@ const features = [
   },
   {
     icon: Cpu,
-    title: "Edge Computing",
+    title: "Edge on Steroids",
     description: "On-board satellite processing reduces data transmission to ground stations dramatically.",
     stat: "10x",
     statLabel: "Data Reduction",
@@ -27,10 +27,10 @@ const features = [
   },
   {
     icon: Globe,
-    title: "Earth Observation",
+    title: "Earth-Complete",
     description: "Real-time wildfire detection, disaster monitoring, and environmental sensing.",
     stat: "24/7",
-    statLabel: "Global Coverage",
+    statLabel: "100% Global Coverage",
   },
   {
     icon: Database,
@@ -41,10 +41,10 @@ const features = [
   },
   {
     icon: Zap,
-    title: "Lightspeed Data Compute",
+    title: "Lightspeed Fast",
     description: "Compute at the speed of light—processing data where it's captured.",
     stat: "∞",
-    statLabel: "Scalability",
+    statLabel: "Light is the Limit",
   },
 ];
 
