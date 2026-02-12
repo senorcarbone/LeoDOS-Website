@@ -8,6 +8,7 @@ import parisImage from "@/assets/team/paris-carbone.jpg";
 import thomasImage from "@/assets/team/thomas.jpg";
 import bernardoImage from "@/assets/team/bernardo.jpg";
 import klasImage from "@/assets/team/klas-segeljakt.png";
+import burcuImage from "@/assets/team/burcu.png";
 
 interface TeamMember {
   name: string;
@@ -67,6 +68,18 @@ const team: TeamMember[] = [
     links: {
       linkedin: "https://www.linkedin.com/in/bernardo-huberman-39b40823/",
       scholar: "https://scholar.google.com/citations?user=b_GVwg0AAAAJ",
+    },
+  },
+  {
+    name: "Burcu Kocoglu",
+    role: "Project Manager",
+    title: "Senior Earth Observation Specialist",
+    organization: "RISE Research Institutes of Sweden",
+    image: burcuImage,
+    bio: "Burcu holds an M.Sc. in Civil and Risk Mitigation Engineering from Politecnico di Milano and a Specializing Master's degree in Innovation Engineering. She is a Senior Earth Observation Specialist and Disaster Risk Management Expert with extensive experience in the EU's Copernicus Programme. As Project Manager in the Space Technologies Research Group at RISE, she brings expertise in leveraging space-based applications for sustainable innovation.",
+    expertise: ["Earth Observation", "EU Copernicus", "Disaster Risk Management", "Innovation Management"],
+    links: {
+      linkedin: "https://www.linkedin.com/in/burcukocoglu",
     },
   },
   {
