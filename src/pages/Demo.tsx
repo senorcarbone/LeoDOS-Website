@@ -118,6 +118,51 @@ const Demo = () => {
               ))}
             </div>
           </div>
+
+          {/* Second Demo */}
+          <div className="text-center mb-12 mt-24">
+            <span className="inline-block px-4 py-1 rounded-full text-xs font-mono text-primary border border-primary/30 mb-4">
+              INTERACTIVE
+            </span>
+            <h2 className="font-orbitron text-3xl md:text-5xl font-bold mb-6">
+              <span className="text-foreground">SpaceCoMP </span>
+              <span className="text-primary">Routing Demo</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Interactive visualization of SpaceCoMP routing algorithms.
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-background/50 backdrop-blur">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-border/50 bg-muted/30">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                </div>
+                <span className="text-xs font-mono text-muted-foreground">SpaceCoMP Routing Demo</span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://leodos-project.github.io/leopymr/logviz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 hover:bg-muted/50 rounded-lg transition-colors"
+                    title="Open in new tab"
+                  >
+                    <ExternalLink className="w-4 h-4 text-muted-foreground" />
+                  </a>
+                </div>
+              </div>
+
+              <iframe
+                src="https://leodos-project.github.io/leopymr/logviz/"
+                className="w-full aspect-video min-h-[600px] bg-white"
+                title="SpaceCoMP Routing Demo"
+                allow="fullscreen"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
