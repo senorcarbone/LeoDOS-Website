@@ -30,7 +30,7 @@ interface TeamMember {
 const team: TeamMember[] = [
   {
     name: "Thomas Sandholm",
-    role: "Principal Co-Investigator",
+    role: "Principal Investigator",
     title: "Research Scientist, PhD",
     organization: "RISE Research Institutes of Sweden",
     image: thomasImage,
@@ -84,7 +84,7 @@ const team: TeamMember[] = [
   },
   {
     name: "Paris Carbone",
-    role: "Principal Co-Investigator",
+    role: "Chief Scientist and Deputy Investigator",
     title: "Assoc Professor of Data Systems",
     organization: "KTH Royal Institute of Technology & RISE ",
     image: parisImage,
