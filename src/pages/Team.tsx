@@ -84,7 +84,7 @@ const team: TeamMember[] = [
   },
   {
     name: "Paris Carbone",
-    role: "Chief Scientist and Deputy Investigator",
+    role: "Chief Scientist and Deputy Principal Investigator",
     title: "Assoc Professor of Data Systems",
     organization: "KTH Royal Institute of Technology & RISE ",
     image: parisImage,
