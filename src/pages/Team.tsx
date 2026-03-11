@@ -59,6 +59,16 @@ const team: TeamMember[] = [
     },
   },
   {
+    name: "Arlette Houndji",
+    role: "PhD Researcher",
+    title: "PhD Student",
+    organization: "KTH Royal Institute of Technology",
+    image: arletteImage,
+    bio: "Arlette is a PhD student specializing in space cybersecurity for integrated Terrestrial and Non-Terrestrial Networks (TN-NTN). Her main research interests include secure path-aware networking, secure handovers, and Public Key Infrastructure (PKI) adapted for TN-NTN communications.",
+    expertise: ["Space Cybersecurity", "TN-NTN Integration", "Secure Handovers", "PKI"],
+    links: {},
+  },
+  {
     name: "Bernardo Huberman",
     role: "Distinguished Advisor",
     title: "Distinguished Scientist",
