@@ -9,6 +9,7 @@ import thomasImage from "@/assets/team/thomas.jpg";
 import bernardoImage from "@/assets/team/bernardo.jpg";
 import klasImage from "@/assets/team/klas-segeljakt.png";
 import burcuImage from "@/assets/team/burcu.png";
+import arletteImage from "@/assets/team/arlette.jpg";
 
 interface TeamMember {
   name: string;
