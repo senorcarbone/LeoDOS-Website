@@ -9,6 +9,7 @@ import thomasImage from "@/assets/team/thomas.jpg";
 import bernardoImage from "@/assets/team/bernardo.jpg";
 import klasImage from "@/assets/team/klas-segeljakt.png";
 import burcuImage from "@/assets/team/burcu.png";
+import arletteImage from "@/assets/team/arlette.jpg";
 
 interface TeamMember {
   name: string;
@@ -56,6 +57,16 @@ const team: TeamMember[] = [
       scholar: "https://scholar.google.com/citations?user=k4bVwsIAAAAJ",
       github: "https://github.com/segeljakt",
     },
+  },
+  {
+    name: "Arlette Houndji",
+    role: "PhD Researcher",
+    title: "PhD Student",
+    organization: "KTH Royal Institute of Technology",
+    image: arletteImage,
+    bio: "Arlette is a PhD student specializing in space cybersecurity for integrated Terrestrial and Non-Terrestrial Networks (TN-NTN). Her main research interests include secure path-aware networking, secure handovers, and Public Key Infrastructure (PKI) adapted for TN-NTN communications.",
+    expertise: ["Space Cybersecurity", "TN-NTN Integration", "Secure Handovers", "PKI"],
+    links: {},
   },
   {
     name: "Bernardo Huberman",
