@@ -47,7 +47,7 @@ const team: TeamMember[] = [
     name: "Thomas Sandholm",
     role: "Principal Investigator",
     title: "Research Scientist, PhD",
-    organization: "RISE Research Institutes of Sweden",
+    organization: "Stanford University; RISE (-02/2026)",
     image: thomasImage,
     bio: "Thomas holds a PhD in Computer and Systems Sciences from KTH. He has over 30 years of research and software development experience in distributed systems, including AI, IoT, Cloud computing and Wireless Networks. His work focuses on the intersection of machine learning/AI and distributed resource allocation.",
     expertise: ["Machine Learning", "Computational Markets", "Distributed Systems", "Resource Allocation"],
