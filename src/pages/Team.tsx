@@ -30,6 +30,20 @@ interface TeamMember {
 
 const team: TeamMember[] = [
   {
+    name: "Paris Carbone",
+    role: "Chief Scientist and deputy PI",
+    title: "Assoc Professor of Data Systems",
+    organization: "KTH Royal Institute of Technology & RISE ",
+    image: parisImage,
+    bio: "Paris chairs the Data Systems Lab at KTH and RISE. He has been a core open source committer for Apache Flink since the start. His research spans distributed algorithms, scalable transactional data systems, coordination-avoidance and declarative programming support for AI and data apps.",
+    expertise: ["Distributed Systems", "Stream Processing", "Apache Flink", "Space Computing"],
+    links: {
+      website: "https://datasystems.nu",
+      linkedin: "https://www.linkedin.com/in/paris-carbone-20752726/",
+      scholar: "https://scholar.google.com/citations?user=qSJPU-UAAAAJ",
+    },
+  },
+  {
     name: "Thomas Sandholm",
     role: "Principal Investigator",
     title: "Research Scientist, PhD",
