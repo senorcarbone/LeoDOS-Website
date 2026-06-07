@@ -6,6 +6,12 @@ import StarField from '@/components/StarField';
 
 const conferences = [
   {
+    name: 'Baltic Geospatial Information Technology Conference',
+    description: 'SpaceCoMP: Distributed On-Board Processing for Live Earth Observation - Presented by Klas in Riga',
+    date: '2026',
+    url: 'https://balticgitconf.eu/session/spacecomp-distributed-on-board-processing-for-live-earth-observation/',
+  },
+  {
     name: '2026 NASA cFS Symposium',
     description: 'Core Flight System Symposium - Presenting LeoDOS project and distributed computing for space systems',
     date: '2026',
