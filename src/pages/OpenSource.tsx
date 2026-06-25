@@ -19,6 +19,13 @@ const projects = [
     url: 'https://github.com/LeoDOS-Project/leo-viz',
     topics: ['rust', 'visualization', 'egui'],
   },
+  {
+    name: 'LeoDOS',
+    description: 'NASA cFS-based operating system for smart on-board processing on LEO satellites. Includes a new set of network layer protocols and algorithms for smart processing.',
+    language: 'C',
+    url: 'https://github.com/LeoDOS-Project/LeoDOS',
+    topics: ['nasa-cfs', 'on-board-processing', 'leo-satellites'],
+  },
 ];
 
 const OpenSource = () => {
