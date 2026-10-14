@@ -31,7 +31,7 @@ interface TeamMember {
 const team: TeamMember[] = [
   {
     name: "Paris Carbone",
-    role: "Chief Scientist and deputy PI",
+    role: "CHIEF SCIENTIST AND PROJECT PI",
     title: "Assoc Professor of Data Systems",
     organization: "KTH Royal Institute of Technology & RISE ",
     image: parisImage,
